@@ -5,14 +5,14 @@ import {
 } from "vue-router";
 import { useAuthStore } from "@/stores/auth";
 
+import KTComponent from '../metronic/core/index';
+import KTLayout from '../metronic/app/layouts/demo1.js';
+
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     redirect: "/dashboard",
     component: () => import("@/layouts/default-layout/DefaultLayout.vue"),
-    meta: {
-      middleware: "auth",
-    },
     children: [
       {
         path: "/dashboard",
@@ -22,8 +22,8 @@ const routes: Array<RouteRecordRaw> = [
           pageTitle: "Dashboard",
           breadcrumbs: ["Dashboards"],
         },
-      },
-    ],
+      }
+    ]
   },
   {
     path: "/",
@@ -33,7 +33,7 @@ const routes: Array<RouteRecordRaw> = [
         path: "/sign-in",
         name: "sign-in",
         component: () =>
-          import("@/views/authentication/telegram/SignIn.vue"),
+            import("@/views/authentication/telegram/SignIn.vue"),
         meta: {
           pageTitle: "Sign In",
         },
@@ -42,7 +42,7 @@ const routes: Array<RouteRecordRaw> = [
         path: "/sign-up",
         name: "sign-up",
         component: () =>
-          import("@/views/authentication/telegram/SignUp.vue"),
+            import("@/views/authentication/telegram/SignUp.vue"),
         meta: {
           pageTitle: "Sign Up",
         },
@@ -51,7 +51,7 @@ const routes: Array<RouteRecordRaw> = [
         path: "/password-reset",
         name: "password-reset",
         component: () =>
-          import("@/views/authentication/telegram/PasswordReset.vue"),
+            import("@/views/authentication/telegram/PasswordReset.vue"),
         meta: {
           pageTitle: "Password reset",
         },
@@ -127,6 +127,11 @@ router.beforeEach((to, from, next) => {
   } else {
     next();
   }
+});
+
+router.beforeEach(() => {
+  KTComponent.init();
+  KTLayout.init();
 });
 
 export default router;
