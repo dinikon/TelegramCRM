@@ -31,14 +31,16 @@ onMounted(async () => {
       // Получаем пользователя из параметра `user`, декодируем JSON
       const user = JSON.parse(decodeURIComponent(params.get('user')));
 
-      // Формируем объект данных для отправки на сервер
+      // Формируем объект данных для отправки на сервер с ключом 'data'
       const response = {
-        id: user.id,
-        first_name: user.first_name,
-        username: user.username,
-        photo_url: user.photo_url,
-        auth_date: params.get('auth_date'), // auth_date находится вне объекта user
-        hash: params.get('hash')            // hash находится вне объекта user
+        data: {
+          id: user.id,
+          first_name: user.first_name,
+          username: user.username,
+          photo_url: user.photo_url || null, // Проверка на наличие photo_url
+          auth_date: params.get('auth_date'), // auth_date находится вне объекта user
+          hash: params.get('hash')            // hash находится вне объекта user
+        }
       };
 
       // Авторизация через хранилище
@@ -58,14 +60,16 @@ onMounted(async () => {
       console.log('Полученные данные пользователя:', user);
 
       try {
-        // Формируем объект данных пользователя
+        // Формируем объект данных пользователя с ключом 'data'
         const response = {
-          id: user.id,
-          first_name: user.first_name,
-          username: user.username,
-          photo_url: user.photo_url,
-          auth_date: user.auth_date, // auth_date уже присутствует в объекте user
-          hash: user.hash            // hash уже присутствует в объекте user
+          data: {
+            id: user.id,
+            first_name: user.first_name,
+            username: user.username,
+            photo_url: user.photo_url || null, // Проверка на наличие photo_url
+            auth_date: user.auth_date, // auth_date уже присутствует в объекте user
+            hash: user.hash            // hash уже присутствует в объекте user
+          }
         };
 
         // Авторизация через хранилище
