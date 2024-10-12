@@ -3,9 +3,9 @@ import Sidebar from '@/components/Sidebar.vue'
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
 import SearchModal from "@/components/SearchModal.vue";
-// import { nextTick, onMounted } from 'vue';
-// import KTComponent from '@/metronic/core/index';
-// import KTLayout from '@/metronic/app/layouts/demo1.js';
+import { nextTick, onMounted } from 'vue';
+import KTComponent from '@/metronic/core/index';
+import KTLayout from '@/metronic/app/layouts/demo1.js';
 
 import {useI18n} from "vue-i18n";
 
@@ -15,12 +15,12 @@ function changeLanguage(language: string) {
   locale.value = language;
 }
 
-// onMounted(() => {
-//   nextTick(() => {
-//     KTComponent.init();
-//     KTLayout.init();
-//   });
-// });
+onMounted(() => {
+  nextTick(() => {
+    KTComponent.init();
+    KTLayout.init();
+  });
+});
 
 </script>
 
@@ -31,8 +31,8 @@ function changeLanguage(language: string) {
       <Header />
       <main class="grow content pt-5" id="content" role="content">
         <div class="container-fixed">
-          <router-view />
         </div>
+        <router-view />
       </main>
       <Footer />
     </div>

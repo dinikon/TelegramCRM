@@ -13,6 +13,9 @@ const routes: Array<RouteRecordRaw> = [
     path: "/",
     redirect: "/dashboard",
     component: () => import("@/layouts/default-layout/DefaultLayout.vue"),
+    meta: {
+      middleware: "auth"
+    },
     children: [
       {
         path: "/dashboard",
@@ -33,29 +36,29 @@ const routes: Array<RouteRecordRaw> = [
         path: "/sign-in",
         name: "sign-in",
         component: () =>
-            import("@/views/authentication/telegram/SignIn.vue"),
+            import("@/views/authentication/SignIn.vue"),
         meta: {
           pageTitle: "Sign In",
         },
       },
-      {
-        path: "/sign-up",
-        name: "sign-up",
-        component: () =>
-            import("@/views/authentication/telegram/SignUp.vue"),
-        meta: {
-          pageTitle: "Sign Up",
-        },
-      },
-      {
-        path: "/password-reset",
-        name: "password-reset",
-        component: () =>
-            import("@/views/authentication/telegram/PasswordReset.vue"),
-        meta: {
-          pageTitle: "Password reset",
-        },
-      },
+      // {
+      //   path: "/sign-up",
+      //   name: "sign-up",
+      //   component: () =>
+      //       import("@/views/authentication/telegram/SignUp.vue"),
+      //   meta: {
+      //     pageTitle: "Sign Up",
+      //   },
+      // },
+      // {
+      //   path: "/password-reset",
+      //   name: "password-reset",
+      //   component: () =>
+      //       import("@/views/authentication/telegram/PasswordReset.vue"),
+      //   meta: {
+      //     pageTitle: "Password reset",
+      //   },
+      // },
     ],
   },
   {
@@ -129,9 +132,9 @@ router.beforeEach((to, from, next) => {
   }
 });
 
-router.beforeEach(() => {
-  KTComponent.init();
-  KTLayout.init();
-});
+// router.beforeEach(() => {
+//   KTComponent.init();
+//   KTLayout.init();
+// });
 
 export default router;
