@@ -16,16 +16,35 @@ const twa = useTelegram();
 onMounted(async () => {
   // Проверка наличия Telegram WebApp
   if (twa.platform && twa.initData) {
+    const twa = useTelegram();
     twa.expand();
-    console.log("twa.initData", twa.initData)
-    console.log("twa.initDataUnsafe", twa.initDataUnsafe)
 
     try {
-      // Выполняем логин через данные Telegram WebApp
-      await store.login(twa.initData);
+      // Получаем данные Telegram WebApp в виде строки запроса
+      const initData = twa.initData;
 
-      // Перенаправляем пользователя на страницу "dashboard"
-      await router.push({name: 'dashboard'});
+      // Парсим строку запроса в объект
+      const params = new URLSearchParams(initData);
+
+      // Получаем пользователя из параметра `user`, декодируем JSON
+      const user = JSON.parse(decodeURIComponent(params.get('user')));
+
+      // Формируем объект данных, похожий на то, что приходит из виджета Telegram
+      const response = {
+        id: user.id,
+        first_name: user.first_name,
+        last_name: user.last_name,
+        username: user.username,
+        photo_url: user.photo_url,
+        auth_date: params.get('auth_date'),
+        hash: params.get('hash')
+      };
+
+      // Авторизация через хранилище
+      await store.login(response);
+
+      // Перенаправляем на dashboard
+      await router.push({ name: 'dashboard' });
     } catch (error) {
       console.error("Ошибка авторизации через Telegram WebApp:", error);
     }
@@ -33,7 +52,7 @@ onMounted(async () => {
   } else {
     console.error('Telegram WebApp не инициализирован');
 
-    // Функция для обработки авторизации через виджет
+    // Логика для виджета Telegram...
     window.onTelegramAuth = async function (user) {
       console.log('Полученные данные пользователя:', user);
 
@@ -53,27 +72,27 @@ onMounted(async () => {
         await store.login(response);
 
         // Перенаправление на dashboard после успешной авторизации
-        await router.push({name: 'dashboard'});
+        await router.push({ name: 'dashboard' });
 
       } catch (error) {
         console.error('Ошибка при отправке данных на сервер:', error.response ? error.response.data : error.message);
       }
     };
 
-    // Создаем скрипт виджета Telegram
+    // Добавление виджета Telegram в DOM
     const script = document.createElement('script');
     script.async = true;
     script.src = 'https://telegram.org/js/telegram-widget.js?22';
-    script.setAttribute('data-telegram-login', 'inikon_dev_bot');  // Убедитесь, что bot username правильный
+    script.setAttribute('data-telegram-login', 'inikon_dev_bot');
     script.setAttribute('data-size', 'large');
     script.setAttribute('data-onauth', 'onTelegramAuth(user)');
     script.setAttribute('data-request-access', 'write');
 
-    // Добавляем виджет в DOM
     if (telegramWidget.value) {
       telegramWidget.value.appendChild(script);
     }
   }
 });
+
 
 </script>
