@@ -4,19 +4,26 @@
 
 <script setup>
 import { onMounted, ref } from 'vue';
-import axios from 'axios';
-
 import {useAuthStore} from "@/stores/auth";
-import {auto} from "@popperjs/core";
 import router from "@/router/index";
+import useTelegram from "@/core/plugins/telegram";
+
+
 
 const telegramWidget = ref(null);
 
 const store = useAuthStore();
 
+if (window.Telegram && window.Telegram.WebApp) {
+  const twa = useTelegram();
+  twa.expand()
 
-onMounted(() => {
-  // Определяем глобальную функцию для обработки данных авторизации
+  await store.login(twa.initData);
+
+  await router.push({name: 'dashboard'});
+
+} else {
+  console.error('Telegram WebApp не инициализирован');
   window.onTelegramAuth = async function (user) {
     console.log('Полученные данные пользователя:', user);
 
@@ -51,6 +58,15 @@ onMounted(() => {
   if (telegramWidget.value) {
     telegramWidget.value.appendChild(script);
   }
+
+}
+
+// console.log(initData)
+// console.log(platform)
+
+onMounted(() => {
+  // Определяем глобальную функцию для обработки данных авторизации
+
 });
 
 </script>
