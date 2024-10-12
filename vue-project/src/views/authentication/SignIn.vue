@@ -8,6 +8,7 @@ import axios from 'axios';
 
 import {useAuthStore} from "@/stores/auth";
 import {auto} from "@popperjs/core";
+import router from "@/router/index";
 
 const telegramWidget = ref(null);
 
@@ -31,11 +32,13 @@ onMounted(() => {
       };
       await store.login(response);
 
-      console.log('Ответ от сервера:', response.data);
+      await router.push({name: 'dashboard'});
+
     } catch (error) {
       console.error('Ошибка при отправке данных на сервер:', error.response ? error.response.data : error.message);
     }
   };
+  router.push({ name: 'dashboard' });
 
   const script = document.createElement('script');
   script.async = true;
