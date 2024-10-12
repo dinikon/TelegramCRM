@@ -16,7 +16,7 @@ onMounted(() => {
     console.log('Полученные данные пользователя:', user);
 
     try {
-      const response = await axios.post('https://api.inikon.in.ua/auth/telegram', {
+      const response = await axios.post('https://api.inikon.in.ua/api/v1/auth/login', {
         id: user.id,
         first_name: user.first_name,
         last_name: user.last_name,
