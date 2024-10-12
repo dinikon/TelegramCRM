@@ -11,10 +11,11 @@ import useTelegram from "@/core/plugins/telegram";
 const telegramWidget = ref(null);
 const store = useAuthStore();
 
+const twa = useTelegram();
+
 onMounted(async () => {
   // Проверка наличия Telegram WebApp
-  if (window.Telegram && window.Telegram.WebApp) {
-    const twa = useTelegram();
+  if (twa.platform && twa.initData) {
     twa.expand();
 
     try {
