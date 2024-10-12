@@ -6,9 +6,12 @@
 import { onMounted, ref } from 'vue';
 import axios from 'axios';
 
+import {useAuthStore} from "@/stores/auth";
+
 const telegramWidget = ref(null);
 
-console.log('Init')
+const store = useAuthStore();
+
 
 onMounted(() => {
   // Определяем глобальную функцию для обработки данных авторизации
@@ -27,6 +30,7 @@ onMounted(() => {
       });
 
       console.log('Ответ от сервера:', response.data);
+      await store.login(response.data)
     } catch (error) {
       console.error('Ошибка при отправке данных на сервер:', error.response ? error.response.data : error.message);
     }
@@ -44,4 +48,5 @@ onMounted(() => {
     telegramWidget.value.appendChild(script);
   }
 });
+
 </script>

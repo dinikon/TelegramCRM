@@ -118,7 +118,7 @@ router.beforeEach((to, from, next) => {
   document.title = `${to.meta.pageTitle} - ${import.meta.env.VITE_APP_NAME}`;
 
   // verify auth token before each page change
-  authStore.verifyAuth();
+  // authStore.verifyAuth();
 
   // before page access check if page requires authentication
   if (to.meta.middleware == "auth") {
