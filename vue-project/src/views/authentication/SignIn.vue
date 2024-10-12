@@ -17,6 +17,8 @@ onMounted(async () => {
   // Проверка наличия Telegram WebApp
   if (twa.platform && twa.initData) {
     twa.expand();
+    console.log("twa.initData", twa.initData)
+    console.log("twa.initDataUnsafe", twa.initDataUnsafe)
 
     try {
       // Выполняем логин через данные Telegram WebApp
