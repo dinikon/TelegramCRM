@@ -19,6 +19,9 @@ onMounted(async () => {
     const twa = useTelegram();
     twa.expand();
 
+    console.log(twa.initData)
+    console.log(twa.initDataUnsafe)
+
     try {
       // Получаем данные Telegram WebApp в виде строки запроса
       const initData = twa.initData;
@@ -36,8 +39,8 @@ onMounted(async () => {
         last_name: user.last_name,
         username: user.username,
         photo_url: user.photo_url,
-        auth_date: params.get('auth_date'),
-        hash: params.get('hash')
+        auth_date: user.auth_date,
+        hash: user.hash
       };
 
       // Авторизация через хранилище
