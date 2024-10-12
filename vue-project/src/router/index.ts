@@ -121,6 +121,9 @@ router.beforeEach((to, from, next) => {
   // authStore.verifyAuth();
 
   // before page access check if page requires authentication
+  if (to.name === "sign-in" && authStore.isAuthenticated) {
+    next({name: "dashboard"})
+  }
   if (to.meta.middleware == "auth") {
     if (authStore.isAuthenticated) {
       next();
@@ -131,10 +134,5 @@ router.beforeEach((to, from, next) => {
     next();
   }
 });
-
-// router.beforeEach(() => {
-//   KTComponent.init();
-//   KTLayout.init();
-// });
 
 export default router;
