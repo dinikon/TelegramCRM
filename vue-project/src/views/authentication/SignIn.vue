@@ -16,11 +16,10 @@ const twa = useTelegram();
 onMounted(async () => {
   // Проверка наличия Telegram WebApp
   if (twa.platform && twa.initData) {
-    const twa = useTelegram();
     twa.expand();
 
     console.log(twa.initData)
-    console.log(twa.initDataUnsafe)
+    console.log(twa.initDataUnsafe.user)
 
     try {
       // Получаем данные Telegram WebApp в виде строки запроса
@@ -32,22 +31,21 @@ onMounted(async () => {
       // Получаем пользователя из параметра `user`, декодируем JSON
       const user = JSON.parse(decodeURIComponent(params.get('user')));
 
-      // Формируем объект данных, похожий на то, что приходит из виджета Telegram
+      // Формируем объект данных для отправки на сервер
       const response = {
         id: user.id,
         first_name: user.first_name,
-        last_name: user.last_name,
         username: user.username,
         photo_url: user.photo_url,
-        auth_date: user.auth_date,
-        hash: user.hash
+        auth_date: params.get('auth_date'), // auth_date находится вне объекта user
+        hash: params.get('hash')            // hash находится вне объекта user
       };
 
       // Авторизация через хранилище
       await store.login(response);
 
       // Перенаправляем на dashboard
-      await router.push({ name: 'dashboard' });
+      await router.push({name: 'dashboard'});
     } catch (error) {
       console.error("Ошибка авторизации через Telegram WebApp:", error);
     }
@@ -64,18 +62,17 @@ onMounted(async () => {
         const response = {
           id: user.id,
           first_name: user.first_name,
-          last_name: user.last_name,
           username: user.username,
           photo_url: user.photo_url,
-          auth_date: user.auth_date,
-          hash: user.hash
+          auth_date: user.auth_date, // auth_date уже присутствует в объекте user
+          hash: user.hash            // hash уже присутствует в объекте user
         };
 
         // Авторизация через хранилище
         await store.login(response);
 
         // Перенаправление на dashboard после успешной авторизации
-        await router.push({ name: 'dashboard' });
+        await router.push({name: 'dashboard'});
 
       } catch (error) {
         console.error('Ошибка при отправке данных на сервер:', error.response ? error.response.data : error.message);
@@ -96,6 +93,4 @@ onMounted(async () => {
     }
   }
 });
-
-
 </script>
