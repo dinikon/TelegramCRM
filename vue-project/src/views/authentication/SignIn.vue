@@ -7,6 +7,7 @@ import { onMounted, ref } from 'vue';
 import axios from 'axios';
 
 import {useAuthStore} from "@/stores/auth";
+import {auto} from "@popperjs/core";
 
 const telegramWidget = ref(null);
 
@@ -19,7 +20,7 @@ onMounted(() => {
     console.log('Полученные данные пользователя:', user);
 
     try {
-      const response = await axios.post('https://api.inikon.com.ua/api/v1/auth/login', {
+      const response = {
         id: user.id,
         first_name: user.first_name,
         last_name: user.last_name,
@@ -27,10 +28,10 @@ onMounted(() => {
         photo_url: user.photo_url,
         auth_date: user.auth_date,
         hash: user.hash
-      });
+      };
+      await store.login(response);
 
       console.log('Ответ от сервера:', response.data);
-      await store.login(response.data)
     } catch (error) {
       console.error('Ошибка при отправке данных на сервер:', error.response ? error.response.data : error.message);
     }
