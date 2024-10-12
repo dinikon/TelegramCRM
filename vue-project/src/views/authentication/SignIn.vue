@@ -25,22 +25,9 @@ onMounted(async () => {
       // Получаем данные Telegram WebApp в виде строки запроса
       const initData = twa.initData;
 
-      // Парсим строку запроса в объект
-      const params = new URLSearchParams(initData);
-
-      // Получаем пользователя из параметра `user`, декодируем JSON
-      const user = JSON.parse(decodeURIComponent(params.get('user')));
-
       // Формируем объект данных для отправки на сервер с ключом 'data'
       const response = {
-        data: {
-          id: user.id,
-          first_name: user.first_name,
-          username: user.username,
-          photo_url: user.photo_url || null, // Проверка на наличие photo_url
-          auth_date: params.get('auth_date'), // auth_date находится вне объекта user
-          hash: params.get('hash')            // hash находится вне объекта user
-        }
+        data: initData
       };
 
       // Авторизация через хранилище
