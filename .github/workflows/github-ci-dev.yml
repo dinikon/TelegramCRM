@@ -34,15 +34,15 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build Docker Image
-        run: docker build -t ghcr.io/${{ steps.set-lowercase-owner.outputs.lowercase_owner }}/telegram-crm-dev:${{ env.IMAGE_TAG }} -f docker/base/Dockerfile .
+        run: docker build -t ghcr.io/${{ steps.set-lowercase-owner.outputs.lowercase_owner }}/telegram-crm-web-dev:${{ env.IMAGE_TAG }} -f docker/base/Dockerfile .
 
       - name: Tag Docker Image as latest
-        run: docker tag ghcr.io/${{ steps.set-lowercase-owner.outputs.lowercase_owner }}/telegram-crm-dev:${{ env.IMAGE_TAG }} ghcr.io/${{ steps.set-lowercase-owner.outputs.lowercase_owner }}/telegram-crm-dev:latest
+        run: docker tag ghcr.io/${{ steps.set-lowercase-owner.outputs.lowercase_owner }}/telegram-crm-web-dev:${{ env.IMAGE_TAG }} ghcr.io/${{ steps.set-lowercase-owner.outputs.lowercase_owner }}/telegram-crm-web-dev:latest
 
       - name: Publish Docker Image
         run: |
-          docker push ghcr.io/${{ steps.set-lowercase-owner.outputs.lowercase_owner }}/telegram-crm-dev:${{ env.IMAGE_TAG }}
-          docker push ghcr.io/${{ steps.set-lowercase-owner.outputs.lowercase_owner }}/telegram-crm-dev:latest
+          docker push ghcr.io/${{ steps.set-lowercase-owner.outputs.lowercase_owner }}/telegram-crm-web-dev:${{ env.IMAGE_TAG }}
+          docker push ghcr.io/${{ steps.set-lowercase-owner.outputs.lowercase_owner }}/telegram-crm-web-dev:latest
 
 #  deploy:
 #    name: Deploy to k3s Cluster
