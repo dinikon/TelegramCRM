@@ -6,14 +6,19 @@ import uaSidebar from '@/locale/ua/sidebar.ts'
 import enRouter from '@/locale/en/router.ts'
 import uaRouter from '@/locale/ua/router.ts'
 
+import enCommon from '@/locale/en/common.ts'
+import uaCommon from '@/locale/ua/common.ts'
+
 const messages = {
   en: {
     sidebar: enSidebar,
     router: enRouter,
+    common: enCommon,
   },
   ua: {
     sidebar: uaSidebar,
     router: uaRouter,
+    common: uaCommon
   },
 };
 

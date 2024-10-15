@@ -1,4 +1,10 @@
 export default {
-    home: "Головна",
-    dashboard: 'Dashboard',
+    default: {
+        home: "Головна",
+        dashboard: 'Dashboard',
+        deals: "Угоди",
+    },
+    system: {
+        error_404: "Помилка 404"
+    }
 }

@@ -23,16 +23,16 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/application/Dashboard.vue"),
         meta: {
           pageTitle: "Dashboard",
-          breadcrumbs: ['router.home', 'router.dashboard'],
+          breadcrumbs: ['router.default.home', 'router.default.dashboard'],
         },
       },
       {
-        path: "/deals",
+        path: "/crm/deals",
         name: "deals",
         component: () => import("@/views/application/crm/deals.vue"),
         meta: {
           pageTitle: "Deals",
-          breadcrumbs: ["Deals"],
+          breadcrumbs: ['router.default.home', 'router.default.deals'],
         },
       }
     ]
@@ -80,7 +80,7 @@ const routes: Array<RouteRecordRaw> = [
         name: "404",
         component: () => import("@/views/system/Error404.vue"),
         meta: {
-          breadcrumbs: ['breadcrumbs.home', 'breadcrumbs.error_404'],
+          breadcrumbs: ['router.default.home', 'router.system.error_404'],
           pageTitle: "Error 404",
         },
       },
