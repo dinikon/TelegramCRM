@@ -25,6 +25,15 @@ const routes: Array<RouteRecordRaw> = [
           pageTitle: "Dashboard",
           breadcrumbs: ["Dashboards"],
         },
+      },
+      {
+        path: "/deals",
+        name: "deals",
+        component: () => import("@/views/application/crm/deals.vue"),
+        meta: {
+          pageTitle: "Deals",
+          breadcrumbs: ["Deals"],
+        },
       }
     ]
   },

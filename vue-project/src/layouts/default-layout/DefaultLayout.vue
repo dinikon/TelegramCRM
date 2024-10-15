@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import Sidebar from '@/components/Sidebar.vue'
+import Sidebar from '@/layouts/default-layout/components/Sidebar.vue'
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
 import SearchModal from "@/components/SearchModal.vue";
