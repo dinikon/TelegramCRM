@@ -1,52 +1,29 @@
 import { createI18n } from 'vue-i18n';
 
-const sidebar = {
-  ua: {
-    sidebar_dashboard: "Дашборд",
-    welcome_message: "Upload Item to Get Started2"
-  },
-  en: {
-    sidebar_dashboard: "Dashboard",
-    welcome_message: "Upload Item to Get Started2"
-  },
-};
+import enSidebar from '@/locale/en/sidebar.ts'
+import uaSidebar from '@/locale/ua/sidebar.ts'
+
+import enRouter from '@/locale/en/router.ts'
+import uaRouter from '@/locale/ua/router.ts'
 
 const messages = {
-  ua: {
-    dashboard: "Дашборд",
-    welcome_message: "Upload Item to Get Started"
-  },
   en: {
-    dashboard: "Dashboard",
-    welcome_message: "Upload Item to Get Started"
+    sidebar: enSidebar,
+    router: enRouter,
+  },
+  ua: {
+    sidebar: uaSidebar,
+    router: uaRouter,
   },
 };
 
-// Объединяем словари
-const combinedMessages = {
-  ua: {
-    messages: {
-      ...messages.ua,
-    },
-    sidebar: {
-      ...sidebar.ua,
-    },
-  },
-  en: {
-    messages: {
-      ...messages.en,
-    },
-    sidebar: {
-      ...sidebar.en,
-    },
-  },
-};
+const savedLocale = localStorage.getItem('lang') || 'ua';  // По умолчанию 'ua'
 
 const i18n = createI18n({
   legacy: false,
-  locale: 'ua',
+  locale: savedLocale, // Устанавливаем язык при инициализации
   globalInjection: true,
-  messages: combinedMessages,
+  messages: messages,
 });
 
 export default i18n;

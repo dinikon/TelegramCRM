@@ -2,6 +2,10 @@
 </script>
 
 <template>
+  <!-- Container -->
+  <div class="container-fixed" id="content_container">
+  </div>
+  <!-- End of Container -->
   <div class="flex items-center flex-wrap md:flex-nowrap lg:items-end justify-between border-b border-b-gray-200 dark:border-b-coal-100 gap-3 lg:gap-6 mb-5 lg:mb-10">
     <!-- Container -->
     <div class="container-fixed" id="hero_container">
@@ -319,291 +323,807 @@
   </div>
   <!-- Container -->
   <div class="container-fixed">
-    <div class="flex items-center flex-wrap md:flex-nowrap lg:items-end justify-between border-b border-b-gray-200 dark:border-b-coal-100 gap-3 lg:gap-6 mb-5 lg:mb-10">
-      <div class="grid">
-        <div class="scrollable-x-auto">
-          <div class="menu gap-3" data-menu="true">
-            <div class="menu-item border-b-2 border-b-transparent menu-item-active:border-b-primary menu-item-here:border-b-primary" data-menu-item-placement="bottom-start" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:hover">
-              <div class="menu-link gap-1.5 pb-2 lg:pb-4 px-2" tabindex="0">
-            <span class="menu-title text-nowrap text-sm text-gray-700 menu-item-active:text-primary menu-item-active:font-medium menu-item-here:text-primary menu-item-here:font-medium menu-item-show:text-primary menu-link-hover:text-primary">
-             Profiles
-            </span>
-                <span class="menu-arrow">
-             <i class="ki-filled ki-down text-2xs text-gray-500 menu-item-active:text-primary menu-item-here:text-primary menu-item-show:text-primary menu-link-hover:text-primary">
-             </i>
-            </span>
-              </div>
-              <div class="menu-dropdown menu-default py-2 min-w-[200px]">
-                <div class="menu-item">
-                  <a class="menu-link" href="html/demo1/public-profile/profiles/default.html" tabindex="0">
-              <span class="menu-title">
-               Default
-              </span>
-                  </a>
-                </div>
-                <div class="menu-item">
-                  <a class="menu-link" href="html/demo1/public-profile/profiles/creator.html" tabindex="0">
-              <span class="menu-title">
-               Creator
-              </span>
-                  </a>
-                </div>
-                <div class="menu-item">
-                  <a class="menu-link" href="html/demo1/public-profile/profiles/company.html" tabindex="0">
-              <span class="menu-title">
-               Company
-              </span>
-                  </a>
-                </div>
-                <div class="menu-item">
-                  <a class="menu-link" href="html/demo1/public-profile/profiles/nft.html" tabindex="0">
-              <span class="menu-title">
-               NFT
-              </span>
-                  </a>
-                </div>
-                <div class="menu-item">
-                  <a class="menu-link" href="html/demo1/public-profile/profiles/blogger.html" tabindex="0">
-              <span class="menu-title">
-               Blogger
-              </span>
-                  </a>
-                </div>
-                <div class="menu-item">
-                  <a class="menu-link" href="html/demo1/public-profile/profiles/crm.html" tabindex="0">
-              <span class="menu-title">
-               CRM
-              </span>
-                  </a>
-                </div>
-                <div class="menu-item" data-menu-item-offset="-10px, 0" data-menu-item-overflow="true" data-menu-item-placement="right-start" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:hover">
-                  <div class="menu-link" tabindex="0">
-              <span class="menu-title">
-               More
-              </span>
-                    <span class="menu-arrow">
-               <i class="ki-filled ki-down text-2xs [.menu-dropdown_&]:-rotate-90">
-               </i>
-              </span>
-                  </div>
-                  <div class="menu-dropdown menu-default py min-w-[200px]">
-                    <div class="menu-item">
-                      <a class="menu-link" href="html/demo1/public-profile/profiles/gamer.html" tabindex="0">
-                <span class="menu-title">
-                 Gamer
-                </span>
-                      </a>
-                    </div>
-                    <div class="menu-item">
-                      <a class="menu-link" href="html/demo1/public-profile/profiles/feeds.html" tabindex="0">
-                <span class="menu-title">
-                 Feeds
-                </span>
-                      </a>
-                    </div>
-                    <div class="menu-item">
-                      <a class="menu-link" href="html/demo1/public-profile/profiles/plain.html" tabindex="0">
-                <span class="menu-title">
-                 Plain
-                </span>
-                      </a>
-                    </div>
-                    <div class="menu-item">
-                      <a class="menu-link" href="html/demo1/public-profile/profiles/modal.html" tabindex="0">
-                <span class="menu-title">
-                 Modal
-                </span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="menu-item border-b-2 border-b-transparent menu-item-active:border-b-primary menu-item-here:border-b-primary" data-menu-item-placement="bottom-start" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:hover">
-              <div class="menu-link gap-1.5 pb-2 lg:pb-4 px-2" tabindex="0">
-            <span class="menu-title text-nowrap text-sm text-gray-700 menu-item-active:text-primary menu-item-active:font-medium menu-item-here:text-primary menu-item-here:font-medium menu-item-show:text-primary menu-link-hover:text-primary">
-             Projects
-            </span>
-                <span class="menu-arrow">
-             <i class="ki-filled ki-down text-2xs text-gray-500 menu-item-active:text-primary menu-item-here:text-primary menu-item-show:text-primary menu-link-hover:text-primary">
-             </i>
-            </span>
-              </div>
-              <div class="menu-dropdown menu-default py-2 min-w-[200px]">
-                <div class="menu-item">
-                  <a class="menu-link" href="html/demo1/public-profile/projects/3-columns.html" tabindex="0">
-              <span class="menu-title">
-               3 Columns
-              </span>
-                  </a>
-                </div>
-                <div class="menu-item">
-                  <a class="menu-link" href="html/demo1/public-profile/projects/2-columns.html" tabindex="0">
-              <span class="menu-title">
-               2 Columns
-              </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="menu-item border-b-2 border-b-transparent menu-item-active:border-b-primary menu-item-here:border-b-primary">
-              <a class="menu-link gap-1.5 pb-2 lg:pb-4 px-2" href="html/demo1/public-profile/works.html" tabindex="0">
-            <span class="menu-title text-nowrap font-medium text-sm text-gray-700 menu-item-active:text-primary menu-item-active:font-semibold menu-item-here:text-primary menu-item-here:font-semibold menu-item-show:text-primary menu-link-hover:text-primary">
-             Works
-            </span>
-              </a>
-            </div>
-            <div class="menu-item border-b-2 border-b-transparent menu-item-active:border-b-primary menu-item-here:border-b-primary">
-              <a class="menu-link gap-1.5 pb-2 lg:pb-4 px-2" href="html/demo1/public-profile/teams.html" tabindex="0">
-            <span class="menu-title text-nowrap font-medium text-sm text-gray-700 menu-item-active:text-primary menu-item-active:font-semibold menu-item-here:text-primary menu-item-here:font-semibold menu-item-show:text-primary menu-link-hover:text-primary">
-             Teams
-            </span>
-              </a>
-            </div>
-            <div class="menu-item border-b-2 border-b-transparent menu-item-active:border-b-primary menu-item-here:border-b-primary">
-              <a class="menu-link gap-1.5 pb-2 lg:pb-4 px-2" href="html/demo1/public-profile/network.html" tabindex="0">
-            <span class="menu-title text-nowrap font-medium text-sm text-gray-700 menu-item-active:text-primary menu-item-active:font-semibold menu-item-here:text-primary menu-item-here:font-semibold menu-item-show:text-primary menu-link-hover:text-primary">
-             Network
-            </span>
-              </a>
-            </div>
-            <div class="menu-item border-b-2 border-b-transparent menu-item-active:border-b-primary menu-item-here:border-b-primary">
-              <a class="menu-link gap-1.5 pb-2 lg:pb-4 px-2" href="html/demo1/public-profile/activity.html" tabindex="0">
-            <span class="menu-title text-nowrap font-medium text-sm text-gray-700 menu-item-active:text-primary menu-item-active:font-semibold menu-item-here:text-primary menu-item-here:font-semibold menu-item-show:text-primary menu-link-hover:text-primary">
-             Activity
-            </span>
-              </a>
-            </div>
-            <div class="menu-item border-b-2 border-b-transparent menu-item-active:border-b-primary menu-item-here:border-b-primary here" data-menu-item-placement="bottom-start" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:hover">
-              <div class="menu-link gap-1.5 pb-2 lg:pb-4 px-2" tabindex="0">
-            <span class="menu-title text-nowrap text-sm text-gray-700 menu-item-active:text-primary menu-item-active:font-medium menu-item-here:text-primary menu-item-here:font-medium menu-item-show:text-primary menu-link-hover:text-primary">
-             More
-            </span>
-                <span class="menu-arrow">
-             <i class="ki-filled ki-down text-2xs text-gray-500 menu-item-active:text-primary menu-item-here:text-primary menu-item-show:text-primary menu-link-hover:text-primary">
-             </i>
-            </span>
-              </div>
-              <div class="menu-dropdown menu-default py-2 min-w-[200px]">
-                <div class="menu-item">
-                  <a class="menu-link" href="html/demo1/public-profile/campaigns/card.html" tabindex="0">
-              <span class="menu-title">
-               Campaigns - Card
-              </span>
-                  </a>
-                </div>
-                <div class="menu-item">
-                  <a class="menu-link" href="html/demo1/public-profile/campaigns/list.html" tabindex="0">
-              <span class="menu-title">
-               Campaigns - List
-              </span>
-                  </a>
-                </div>
-                <div class="menu-item active">
-                  <a class="menu-link" href="html/demo1/public-profile/empty.html" tabindex="0">
-              <span class="menu-title">
-               Empty
-              </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div class="flex flex-wrap items-center lg:items-end justify-between gap-5 pb-7.5">
+      <div class="flex flex-col justify-center gap-2">
+        <h1 class="text-2xl font-semibold leading-none text-gray-900 mb1.5">
+          Account
+        </h1>
+        <div class="flex items-center gap-2 text-sm font-medium">
+         <span class="text-gray-800 font-medium">
+          Jayson Tatum
+         </span>
+          <a class="text-gray-700 hover:text-primary" href="mailto:jaytatum@ktstudio.com">
+            jaytatum@ktstudio.com
+          </a>
+          <span class="size-0.75 bg-gray-600 rounded-full">
+         </span>
+          <a class="font-semibold btn btn-link link" href="html/demo1/account/members/team-info.html">
+            Personal Info
+          </a>
         </div>
-      </div>
-      <div class="flex items-center justify-end grow lg:grow-0 lg:pb-4 gap-2.5 mb-3 lg:mb-0">
-        <div class="dropdown" data-dropdown="true" data-dropdown-placement="bottom-end" data-dropdown-trigger="click">
-          <button class="dropdown-toggle btn btn-sm btn-primary">
-            <i class="ki-filled ki-users">
-            </i>
-            Connect
-          </button>
-          <div class="dropdown-content menu-default w-full max-w-[220px]">
-            <div class="menu-item" data-dropdown-dismiss="true">
-              <button class="menu-link" data-modal-toggle="#share_profile_modal">
-            <span class="menu-icon">
-             <i class="ki-filled ki-coffee">
-             </i>
-            </span>
-                <span class="menu-title">
-             Share Profile
-            </span>
-              </button>
-            </div>
-            <div class="menu-item" data-dropdown-dismiss="true">
-              <a class="menu-link" data-modal-toggle="#give_award_modal" href="#">
-            <span class="menu-icon">
-             <i class="ki-filled ki-award">
-             </i>
-            </span>
-                <span class="menu-title">
-             Give Award
-            </span>
-              </a>
-            </div>
-            <div class="menu-item" data-dropdown-dismiss="true">
-              <button class="menu-link">
-            <span class="menu-icon">
-             <i class="ki-filled ki-chart-line">
-             </i>
-            </span>
-                <span class="menu-title">
-             Stay Updated
-            </span>
-                <label class="switch switch-sm">
-                  <input name="check" type="checkbox" value="1">
-                  </input>
-                </label>
-              </button>
-            </div>
-            <div class="menu-item" data-dropdown-dismiss="true">
-              <button class="menu-link" data-modal-toggle="#report_user_modal">
-            <span class="menu-icon">
-             <i class="ki-filled ki-information-2">
-             </i>
-            </span>
-                <span class="menu-title">
-             Report User
-            </span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <button class="btn btn-sm btn-icon btn-light">
-          <i class="ki-filled ki-messages">
-          </i>
-        </button>
-        <button class="btn btn-sm btn-icon btn-light">
-          <i class="ki-filled ki-dots-vertical">
-          </i>
-        </button>
       </div>
     </div>
   </div>
   <!-- End of Container -->
   <!-- Container -->
   <div class="container-fixed">
-    <div class="card p-8 lg:p-12">
-      <div class="card-body">
-        <div class="grid justify-center py-5">
-          <img alt="" class="dark:hidden max-h-[170px]" src="/media/illustrations/11.svg"/>
-          <img alt="" class="light:hidden max-h-[170px]" src="/media/illustrations/11-dark.svg"/>
+    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 lg:gap-7.5">
+      <div class="card p-5 lg:p-7.5 lg:pt-7">
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center justify-between gap-2">
+            <i class="ki-filled ki-badge text-2xl link">
+            </i>
+            <div class="menu" data-menu="true">
+              <div class="menu-item" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
+                <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
+                  <i class="ki-filled ki-dots-vertical">
+                  </i>
+                </button>
+                <div class="menu-dropdown menu-default w-full max-w-[200px]" data-menu-dismiss="true">
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/home/settings-enterprise.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-setting-3">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Settings
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/members/import-members.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-some-files">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Import
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/activity.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-cloud-change">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Activity
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" data-modal-toggle="#report_user_modal" href="#">
+               <span class="menu-icon">
+                <i class="ki-filled ki-dislike">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Report
+               </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-3">
+            <a class="text-base font-medium leading-none text-gray-900 hover:text-primary-active" href="html/demo1/account/members/team-info.html">
+              Personal info
+            </a>
+            <span class="text-2sm text-gray-700 leading-5">
+           We're open to partnerships, guest posts, promo bannersand more.
+          </span>
+          </div>
         </div>
-        <div class="text-lg font-medium text-gray-900 text-center">
-          Upload Item to Get Started
+      </div>
+      <div class="card p-5 lg:p-7.5 lg:pt-7">
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center justify-between gap-2">
+            <i class="ki-filled ki-security-user text-2xl link">
+            </i>
+            <div class="menu" data-menu="true">
+              <div class="menu-item" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
+                <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
+                  <i class="ki-filled ki-dots-vertical">
+                  </i>
+                </button>
+                <div class="menu-dropdown menu-default w-full max-w-[200px]" data-menu-dismiss="true">
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/home/settings-enterprise.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-setting-3">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Settings
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/members/import-members.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-some-files">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Import
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/activity.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-cloud-change">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Activity
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" data-modal-toggle="#report_user_modal" href="#">
+               <span class="menu-icon">
+                <i class="ki-filled ki-dislike">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Report
+               </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-3">
+            <a class="text-base font-medium leading-none text-gray-900 hover:text-primary-active" href="html/demo1/account/security/security-log.html">
+              Login & Security
+            </a>
+            <span class="text-2sm text-gray-700 leading-5">
+           Safeguarding your information with strong authentication measures.
+          </span>
+          </div>
         </div>
-        <div class="text-sm text-gray-700 text-center gap-1">
-          Begin by crafting your inaugural list in minutes.
-          <a class="text-sm font-medium link" href="html/demo1/account/billing/plans.html">
-            Get Started!
-          </a>
+      </div>
+      <div class="card p-5 lg:p-7.5 lg:pt-7">
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center justify-between gap-2">
+            <i class="ki-filled ki-cheque text-2xl link">
+            </i>
+            <div class="menu" data-menu="true">
+              <div class="menu-item" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
+                <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
+                  <i class="ki-filled ki-dots-vertical">
+                  </i>
+                </button>
+                <div class="menu-dropdown menu-default w-full max-w-[200px]" data-menu-dismiss="true">
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/home/settings-enterprise.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-setting-3">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Settings
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/members/import-members.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-some-files">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Import
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/activity.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-cloud-change">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Activity
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" data-modal-toggle="#report_user_modal" href="#">
+               <span class="menu-icon">
+                <i class="ki-filled ki-dislike">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Report
+               </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-3">
+            <a class="text-base font-medium leading-none text-gray-900 hover:text-primary-active" href="html/demo1/account/billing/basic.html">
+              Billing & Payments
+            </a>
+            <span class="text-2sm text-gray-700 leading-5">
+           Simplify payments today with secure, user-friendly transaction processes.
+          </span>
+          </div>
+        </div>
+      </div>
+      <div class="card p-5 lg:p-7.5 lg:pt-7">
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center justify-between gap-2">
+            <i class="ki-filled ki-notification-on text-2xl link">
+            </i>
+            <div class="menu" data-menu="true">
+              <div class="menu-item" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
+                <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
+                  <i class="ki-filled ki-dots-vertical">
+                  </i>
+                </button>
+                <div class="menu-dropdown menu-default w-full max-w-[200px]" data-menu-dismiss="true">
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/home/settings-enterprise.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-setting-3">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Settings
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/members/import-members.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-some-files">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Import
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/activity.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-cloud-change">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Activity
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" data-modal-toggle="#report_user_modal" href="#">
+               <span class="menu-icon">
+                <i class="ki-filled ki-dislike">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Report
+               </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-3">
+            <a class="text-base font-medium leading-none text-gray-900 hover:text-primary-active" href="html/demo1/account/notifications.html">
+              Notifications
+            </a>
+            <span class="text-2sm text-gray-700 leading-5">
+           Keep updated with important notices and event reminders.
+          </span>
+          </div>
+        </div>
+      </div>
+      <div class="card p-5 lg:p-7.5 lg:pt-7">
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center justify-between gap-2">
+            <i class="ki-filled ki-dropbox text-2xl link">
+            </i>
+            <div class="menu" data-menu="true">
+              <div class="menu-item" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
+                <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
+                  <i class="ki-filled ki-dots-vertical">
+                  </i>
+                </button>
+                <div class="menu-dropdown menu-default w-full max-w-[200px]" data-menu-dismiss="true">
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/home/settings-enterprise.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-setting-3">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Settings
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/members/import-members.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-some-files">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Import
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/activity.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-cloud-change">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Activity
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" data-modal-toggle="#report_user_modal" href="#">
+               <span class="menu-icon">
+                <i class="ki-filled ki-dislike">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Report
+               </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-3">
+            <a class="text-base font-medium leading-none text-gray-900 hover:text-primary-active" href="html/demo1/account/integrations.html">
+              Integrations
+            </a>
+            <span class="text-2sm text-gray-700 leading-5">
+           Enhance Workflows with Advanced Integrations.
+          </span>
+          </div>
+        </div>
+      </div>
+      <div class="card p-5 lg:p-7.5 lg:pt-7">
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center justify-between gap-2">
+            <i class="ki-filled ki-user text-2xl link">
+            </i>
+            <div class="menu" data-menu="true">
+              <div class="menu-item" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
+                <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
+                  <i class="ki-filled ki-dots-vertical">
+                  </i>
+                </button>
+                <div class="menu-dropdown menu-default w-full max-w-[200px]" data-menu-dismiss="true">
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/home/settings-enterprise.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-setting-3">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Settings
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/members/import-members.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-some-files">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Import
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/activity.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-cloud-change">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Activity
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" data-modal-toggle="#report_user_modal" href="#">
+               <span class="menu-icon">
+                <i class="ki-filled ki-dislike">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Report
+               </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-3">
+            <a class="text-base font-medium leading-none text-gray-900 hover:text-primary-active" href="html/demo1/account/members/roles.html">
+              Members, Teams & Roles
+            </a>
+            <span class="text-2sm text-gray-700 leading-5">
+           Efficient management of members, teams, and roles.
+          </span>
+          </div>
+        </div>
+      </div>
+      <div class="card p-5 lg:p-7.5 lg:pt-7">
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center justify-between gap-2">
+            <i class="ki-filled ki-key-square text-2xl link">
+            </i>
+            <div class="menu" data-menu="true">
+              <div class="menu-item" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
+                <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
+                  <i class="ki-filled ki-dots-vertical">
+                  </i>
+                </button>
+                <div class="menu-dropdown menu-default w-full max-w-[200px]" data-menu-dismiss="true">
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/home/settings-enterprise.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-setting-3">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Settings
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/members/import-members.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-some-files">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Import
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/activity.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-cloud-change">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Activity
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" data-modal-toggle="#report_user_modal" href="#">
+               <span class="menu-icon">
+                <i class="ki-filled ki-dislike">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Report
+               </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-3">
+            <a class="text-base font-medium leading-none text-gray-900 hover:text-primary-active" href="html/demo1/account/api-keys.html">
+              API Keys
+            </a>
+            <span class="text-2sm text-gray-700 leading-5">
+           Secure and manage Your API Keys effectively and efficiently.
+          </span>
+          </div>
+        </div>
+      </div>
+      <div class="card p-5 lg:p-7.5 lg:pt-7">
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center justify-between gap-2">
+            <i class="ki-filled ki-mouse-square text-2xl link">
+            </i>
+            <div class="menu" data-menu="true">
+              <div class="menu-item" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
+                <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
+                  <i class="ki-filled ki-dots-vertical">
+                  </i>
+                </button>
+                <div class="menu-dropdown menu-default w-full max-w-[200px]" data-menu-dismiss="true">
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/home/settings-enterprise.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-setting-3">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Settings
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/members/import-members.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-some-files">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Import
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/activity.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-cloud-change">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Activity
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" data-modal-toggle="#report_user_modal" href="#">
+               <span class="menu-icon">
+                <i class="ki-filled ki-dislike">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Report
+               </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-3">
+            <a class="text-base font-medium leading-none text-gray-900 hover:text-primary-active" href="html/demo1/account/appearance.html">
+              Appearance
+            </a>
+            <span class="text-2sm text-gray-700 leading-5">
+           Transforming your online presence with flawless appearance.
+          </span>
+          </div>
+        </div>
+      </div>
+      <div class="card p-5 lg:p-7.5 lg:pt-7">
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center justify-between gap-2">
+            <i class="ki-filled ki-desktop-mobile text-2xl link">
+            </i>
+            <div class="menu" data-menu="true">
+              <div class="menu-item" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
+                <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
+                  <i class="ki-filled ki-dots-vertical">
+                  </i>
+                </button>
+                <div class="menu-dropdown menu-default w-full max-w-[200px]" data-menu-dismiss="true">
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/home/settings-enterprise.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-setting-3">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Settings
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/members/import-members.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-some-files">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Import
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/activity.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-cloud-change">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Activity
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" data-modal-toggle="#report_user_modal" href="#">
+               <span class="menu-icon">
+                <i class="ki-filled ki-dislike">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Report
+               </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-3">
+            <a class="text-base font-medium leading-none text-gray-900 hover:text-primary-active" href="html/demo1.html">
+              Devices
+            </a>
+            <span class="text-2sm text-gray-700 leading-5">
+           Stay ahead with the latest devices and innovations news
+          </span>
+          </div>
+        </div>
+      </div>
+      <div class="card p-5 lg:p-7.5 lg:pt-7">
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center justify-between gap-2">
+            <i class="ki-filled ki-color-swatch text-2xl link">
+            </i>
+            <div class="menu" data-menu="true">
+              <div class="menu-item" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
+                <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
+                  <i class="ki-filled ki-dots-vertical">
+                  </i>
+                </button>
+                <div class="menu-dropdown menu-default w-full max-w-[200px]" data-menu-dismiss="true">
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/home/settings-enterprise.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-setting-3">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Settings
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/members/import-members.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-some-files">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Import
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/activity.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-cloud-change">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Activity
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" data-modal-toggle="#report_user_modal" href="#">
+               <span class="menu-icon">
+                <i class="ki-filled ki-dislike">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Report
+               </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-3">
+            <a class="text-base font-medium leading-none text-gray-900 hover:text-primary-active" href="html/demo1/account/invite-a-friend.html">
+              Brand
+            </a>
+            <span class="text-2sm text-gray-700 leading-5">
+           Trending brand designs, identities, and logos.
+          </span>
+          </div>
+        </div>
+      </div>
+      <div class="card p-5 lg:p-7.5 lg:pt-7">
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center justify-between gap-2">
+            <i class="ki-filled ki-chart-line-star text-2xl link">
+            </i>
+            <div class="menu" data-menu="true">
+              <div class="menu-item" data-menu-item-offset="0, 10px" data-menu-item-placement="bottom-end" data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
+                <button class="menu-toggle btn btn-sm btn-icon btn-light btn-clear">
+                  <i class="ki-filled ki-dots-vertical">
+                  </i>
+                </button>
+                <div class="menu-dropdown menu-default w-full max-w-[200px]" data-menu-dismiss="true">
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/home/settings-enterprise.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-setting-3">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Settings
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/members/import-members.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-some-files">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Import
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" href="html/demo1/account/activity.html">
+               <span class="menu-icon">
+                <i class="ki-filled ki-cloud-change">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Activity
+               </span>
+                    </a>
+                  </div>
+                  <div class="menu-item">
+                    <a class="menu-link" data-modal-toggle="#report_user_modal" href="#">
+               <span class="menu-icon">
+                <i class="ki-filled ki-dislike">
+                </i>
+               </span>
+                      <span class="menu-title">
+                Report
+               </span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-3">
+            <a class="text-base font-medium leading-none text-gray-900 hover:text-primary-active" href="html/demo1/account/activity.html">
+              Activity
+            </a>
+            <span class="text-2sm text-gray-700 leading-5">
+           Central Hub for Personal Customization.
+          </span>
+          </div>
         </div>
       </div>
     </div>
     <div class="flex grow justify-center pt-5 lg:pt-7.5">
-      <a class="btn btn-link" href="html/demo1/public-profile/profiles/default.html">
-        Check ready Templates
+      <a class="btn btn-link" href="#">
+        More Account Options
       </a>
     </div>
   </div>
+  <!-- End of Container -->
 </template>

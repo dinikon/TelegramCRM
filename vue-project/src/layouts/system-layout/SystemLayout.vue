@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import Sidebar from '@/layouts/default-layout/components/Sidebar.vue'
-import Header from '@/layouts/default-layout/components/Header.vue'
-import Footer from '@/layouts/default-layout/components/Footer.vue'
+import Sidebar from '@/layouts/system-layout/components/Sidebar.vue'
+import Header from '@/layouts/system-layout/components/Header.vue'
+import Footer from '@/layouts/system-layout/components/Footer.vue'
 import SearchModal from "@/layouts/default-layout/components/SearchModal.vue";
 import { nextTick, onMounted } from 'vue';
-import KTComponent from '@/metronic/core/index';
+import KTComponent from '@/metronic/core';
 import KTLayout from '@/metronic/app/layouts/demo1.js';
 
 import {useI18n} from "vue-i18n";
@@ -37,5 +37,5 @@ onMounted(() => {
       <Footer />
     </div>
   </div>
-<!--  <SearchModal />-->
+  <!--  <SearchModal />-->
 </template>

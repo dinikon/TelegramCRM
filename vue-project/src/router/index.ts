@@ -23,7 +23,7 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/application/Dashboard.vue"),
         meta: {
           pageTitle: "Dashboard",
-          breadcrumbs: ["Dashboards"],
+          breadcrumbs: ['router.home', 'router.dashboard'],
         },
       },
       {
@@ -72,7 +72,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/",
-    component: () => import("@/layouts/SystemLayout.vue"),
+    component: () => import("@/layouts/system-layout/SystemLayout.vue"),
     children: [
       {
         // the 404 route, when none of the above matches
@@ -80,6 +80,7 @@ const routes: Array<RouteRecordRaw> = [
         name: "404",
         component: () => import("@/views/system/Error404.vue"),
         meta: {
+          breadcrumbs: ['breadcrumbs.home', 'breadcrumbs.error_404'],
           pageTitle: "Error 404",
         },
       },
