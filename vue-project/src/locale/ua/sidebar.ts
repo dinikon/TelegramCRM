@@ -1,4 +1,5 @@
 export default {
+    crm: "CRM",
     leads: "Ліди",
     deals: "Угоди",
     contacts: "Контакти",

@@ -1,4 +1,5 @@
 export default {
+    crm: "CRM",
     leads: "Leads",
     deals: "Deals",
     contacts: "Contacts",
