@@ -5,6 +5,64 @@
   <!-- Container -->
   <div class="container-fixed" id="content_container">
   </div>
+  <!--begin::Menu-->
+  <div class="menu menu-default" data-menu="true">
+    <div class="menu-item" data-menu-item-placement="bottom-end" data-menu-item-toggle="dropdown" data-menu-item-trigger="click">
+      <!--begin::Menu toggle-->
+      <button class="menu-toggle btn btn-primary">
+        Current Mode:
+        <i class="ki-outline ki-night-day flex dark:hidden text-xl">
+        </i>
+        <i class="ki-outline ki-moon hidden dark:flex text-xl">
+        </i>
+      </button>
+      <!--end::Menu toggle-->
+      <!--begin::Dropdown-->
+      <div class="menu-dropdown py-2 w-[150px]">
+        <!--begin::Menu item-->
+        <div class="menu-item">
+          <button class="menu-link light-mode:bg-gray-100 light-mode:text-primary" data-theme-switch="light">
+     <span class="menu-icon">
+      <i class="ki-outline ki-night-day light-mode:text-primary">
+      </i>
+     </span>
+            <span class="menu-title">
+      Light
+     </span>
+          </button>
+        </div>
+        <!--end::Menu item-->
+        <!--begin::Menu item-->
+        <div class="menu-item">
+          <button class="menu-link dark-mode:bg-gray-100 dark-mode:text-primary" data-theme-switch="dark">
+     <span class="menu-icon">
+      <i class="ki-outline ki-moon dark-mode:text-primary">
+      </i>
+     </span>
+            <span class="menu-title">
+      Dark
+     </span>
+          </button>
+        </div>
+        <!--end::Menu item-->
+        <!--begin::Menu item-->
+        <div class="menu-item">
+          <button class="menu-link system-mode:bg-gray-100 system-mode:text-primary" data-theme-switch="system">
+     <span class="menu-icon">
+      <i class="ki-outline ki-screen system-mode:text-primary">
+      </i>
+     </span>
+            <span class="menu-title">
+      System
+     </span>
+          </button>
+        </div>
+        <!--end::Menu item-->
+      </div>
+      <!--end::Dropdown-->
+    </div>
+  </div>
+  <!--end::Menu-->
   <!-- End of Container -->
   <div class="flex items-center flex-wrap md:flex-nowrap lg:items-end justify-between border-b border-b-gray-200 dark:border-b-coal-100 gap-3 lg:gap-6 mb-5 lg:mb-10">
     <!-- Container -->
