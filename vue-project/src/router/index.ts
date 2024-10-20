@@ -27,12 +27,30 @@ const routes: Array<RouteRecordRaw> = [
         },
       },
       {
+        path: "/account/workspace",
+        name: "workspace",
+        component: () => import("@/views/account/Workspace.vue"),
+        meta: {
+          pageTitle: "Workspaces",
+          breadcrumbs: ['router.default.home', 'router.default.deals'],
+        },
+      },
+      {
         path: "/crm/deals",
         name: "deals",
         component: () => import("@/views/application/crm/deals.vue"),
         meta: {
           pageTitle: "Deals",
           breadcrumbs: ['router.default.home', 'router.default.deals'],
+        },
+      },
+      {
+        path: "/commerce/sale-center",
+        name: "sale-center",
+        component: () => import("@/views/application/commerce/CommerceCenter.vue"),
+        meta: {
+          pageTitle: "Deals",
+          breadcrumbs: ['router.default.home', 'router.default.sale_center'],
         },
       }
     ]

@@ -1,6 +1,22 @@
 <script setup lang="ts">
 import Breadcrumbs from "@/components/Breadcrumbs.vue";
 import MenuItemLanguage from "@/components/MenuItemLanguage.vue";
+import {useAuthStore} from "@/stores/auth.ts";
+import ApiService from "@/core/services/ApiService.ts";
+
+import router from "@/router/index";
+const store = useAuthStore();
+
+function handleLogout() {
+  store.logout()
+  ApiService.post("api/v1/auth/logout", {})
+      .then((response) => {
+        console.log(response)
+        router.push({name: "sign-in"})
+      })
+      .catch((error) => {console.log(error)})
+}
+
 </script>
 
 <template>
@@ -1834,9 +1850,9 @@ import MenuItemLanguage from "@/components/MenuItemLanguage.vue";
                   </div>
                 </div>
                 <div class="menu-item px-4 py-1.5">
-                  <a class="btn btn-sm btn-light justify-center" href="html/demo1/authentication/classic/sign-in.html">
+                  <button v-on:click="handleLogout" class="btn btn-sm btn-light justify-center" href="html/demo1/authentication/classic/sign-in.html">
                     Log out
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>

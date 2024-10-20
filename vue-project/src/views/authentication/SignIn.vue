@@ -1,5 +1,8 @@
 <template>
   <div ref="telegramWidget"></div>
+  <div>
+    <button class="button" v-on:click="LoginDomoAccount" >Test Account</button>
+  </div>
 </template>
 
 <script setup>
@@ -84,4 +87,25 @@ onMounted(async () => {
     }
   }
 });
+
+const login_data = {
+  "data": {
+    "id": 428637115,
+    "first_name": "Денис",
+    "username": "iNikon",
+    "photo_url": "https://t.me/i/userpic/320/hB8OnBYYd9OBpFQxOTLb1EXMJlMw5pKpJ8xNpGpigO8.jpg",
+    "auth_date": 1728739528,
+    "hash": "56b783a7b8600ee1da4666e529c46bc4d6ce5096caa3158b672c869fb88d6934"
+  }
+}
+
+async function LoginDomoAccount() {
+  try {
+    await store.login(login_data);  // Ожидание завершения логина
+    router.push({ name: 'workspace' });
+  } catch (error) {
+    console.log("Error: ", error);
+  }
+}
+
 </script>

@@ -14,8 +14,8 @@ const app = createApp(App)
 app.use(createPinia());
 app.use(router);
 
-ApiService.init(app);
-
 app.use(i18n);
+
+ApiService.init(app);
 
 app.mount('#app')

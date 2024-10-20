@@ -435,8 +435,8 @@ const {t} = useI18n();
             <div
                 class="menu-accordion gap-0.5 pl-[10px] relative before:absolute before:left-[20px] before:top-0 before:bottom-0 before:border-l before:border-gray-200">
               <div class="menu-item">
-                <a class="menu-link gap-[14px] pl-[10px] pr-[10px] py-[8px] border border-transparent items-center grow menu-item-active:bg-secondary-active dark:menu-item-active:bg-coal-300 dark:menu-item-active:border-gray-100 menu-item-active:rounded-lg hover:bg-secondary-active dark:hover:bg-coal-300 dark:hover:border-gray-100 hover:rounded-lg"
-                   href="html/demo1/authentication/welcome-message.html" tabindex="0">
+                <router-link class="menu-link gap-[14px] pl-[10px] pr-[10px] py-[8px] border border-transparent items-center grow menu-item-active:bg-secondary-active dark:menu-item-active:bg-coal-300 dark:menu-item-active:border-gray-100 menu-item-active:rounded-lg hover:bg-secondary-active dark:hover:bg-coal-300 dark:hover:border-gray-100 hover:rounded-lg"
+                   to="/commerce/sale-center" tabindex="0">
                   <span
                       class="menu-bullet flex w-[6px] relative before:absolute before:top-0 before:size-[6px] before:rounded-full before:-translate-x-1/2 before:-translate-y-1/2 menu-item-active:before:bg-primary menu-item-hover:before:bg-primary">
                   </span>
@@ -444,7 +444,7 @@ const {t} = useI18n();
                       class="menu-title text-2sm font-medium text-gray-700 menu-item-active:text-primary menu-item-active:font-semibold menu-link-hover:!text-primary">
                     {{ $t('sidebar.sale_center') }}
                   </span>
-                </a>
+                </router-link>
               </div>
               <div class="menu-item" data-menu-item-toggle="accordion" data-menu-item-trigger="click">
                 <div

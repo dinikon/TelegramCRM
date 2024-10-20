@@ -1,25 +1,25 @@
-const access_token = "access_token" as string;
+const accessToken = "access_token" as string;
 
 /**
  * @description get token form localStorage
  */
 export const getToken = (): string | null => {
-  return window.localStorage.getItem(access_token);
+  return window.localStorage.getItem(accessToken);
 };
 
 /**
  * @description save token into localStorage
- * @param token
+ * @param access_token
  */
-export const saveToken = (token: string): void => {
-  window.localStorage.setItem(access_token, token);
+export const saveToken = (access_token: string): void => {
+  window.localStorage.setItem(accessToken, access_token);
 };
 
 /**
  * @description remove token form localStorage
  */
 export const destroyToken = (): void => {
-  window.localStorage.removeItem(access_token);
+  window.localStorage.removeItem(accessToken);
 };
 
 export default { getToken, saveToken, destroyToken };

@@ -39,5 +39,4 @@ export default {
     product_catalog: "Product Catalog",
     product_category: "Products category",
     product_properties: "Products properties",
-    price_list: "Price List",
 };

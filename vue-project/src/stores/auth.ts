@@ -20,7 +20,6 @@ export const useAuthStore = defineStore("auth", () => {
     isAuthenticated.value = true;
     user.value = authUser;
     errors.value = {};
-    console.log("user.values:", user.value)
     JwtService.saveToken(user.value.access_token);
   }
 
