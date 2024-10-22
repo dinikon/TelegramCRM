@@ -27,6 +27,15 @@ const routes: Array<RouteRecordRaw> = [
         },
       },
       {
+        path: "/account/account",
+        name: "account",
+        component: () => import("@/views/account/Account.vue"),
+        meta: {
+          pageTitle: "Workspaces",
+          breadcrumbs: ['router.default.home', 'router.default.deals'],
+        },
+      },
+      {
         path: "/account/workspace",
         name: "workspace",
         component: () => import("@/views/account/Workspace.vue"),
@@ -52,48 +61,8 @@ const routes: Array<RouteRecordRaw> = [
           pageTitle: "Deals",
           breadcrumbs: ['router.default.home', 'router.default.sale_center'],
         },
-      }
-    ]
-  },
-  {
-    path: "/",
-    component: () => import("@/layouts/AuthLayout.vue"),
-    children: [
-      {
-        path: "/sign-in",
-        name: "sign-in",
-        component: () =>
-            import("@/views/authentication/SignIn.vue"),
-        meta: {
-          pageTitle: "Sign In",
-        },
       },
-      // {
-      //   path: "/sign-up",
-      //   name: "sign-up",
-      //   component: () =>
-      //       import("@/views/authentication/telegram/SignUp.vue"),
-      //   meta: {
-      //     pageTitle: "Sign Up",
-      //   },
-      // },
-      // {
-      //   path: "/password-reset",
-      //   name: "password-reset",
-      //   component: () =>
-      //       import("@/views/authentication/telegram/PasswordReset.vue"),
-      //   meta: {
-      //     pageTitle: "Password reset",
-      //   },
-      // },
-    ],
-  },
-  {
-    path: "/",
-    component: () => import("@/layouts/system-layout/SystemLayout.vue"),
-    children: [
       {
-        // the 404 route, when none of the above matches
         path: "/404",
         name: "404",
         component: () => import("@/views/system/Error404.vue"),
@@ -108,6 +77,21 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/views/system/Error500.vue"),
         meta: {
           pageTitle: "Error 500",
+        },
+      },
+    ]
+  },
+  {
+    path: "/",
+    component: () => import("@/layouts/AuthLayout.vue"),
+    children: [
+      {
+        path: "/sign-in",
+        name: "sign-in",
+        component: () =>
+            import("@/views/authentication/SignIn.vue"),
+        meta: {
+          pageTitle: "Sign In",
         },
       },
     ],

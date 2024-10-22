@@ -37,5 +37,5 @@ onMounted(() => {
       <Footer />
     </div>
   </div>
-<!--  <SearchModal />-->
+  <SearchModal />
 </template>

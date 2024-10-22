@@ -60,15 +60,15 @@ function handleLogout() {
             </a>
           </div>
           <div class="menu-item">
-            <a class="menu-link" href="html/demo1/account/home/user-profile.html">
-              <span class="menu-icon">
-                <i class="ki-filled ki-profile-circle">
-                </i>
-              </span>
-              <span class="menu-title">
-                My Profile
-              </span>
-            </a>
+<!--            <a class="menu-link" href="html/demo1/account/home/user-profile.html">-->
+<!--              <span class="menu-icon">-->
+<!--                <i class="ki-filled ki-profile-circle">-->
+<!--                </i>-->
+<!--              </span>-->
+<!--              <span class="menu-title">-->
+<!--                My Profile-->
+<!--              </span>-->
+<!--            </a>-->
           </div>
           <div class="menu-item" data-menu-item-offset="-50px, 0" data-menu-item-placement="left-start"
                data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:hover">

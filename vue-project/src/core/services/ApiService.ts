@@ -63,7 +63,9 @@ class ApiService {
    * @param params
    */
   public static post(resource: string, params: any): Promise<AxiosResponse> {
-    return ApiService.vueInstance.axios.post(`${resource}`, params);
+    return ApiService.vueInstance.axios.post(`${resource}`, params, {
+      withCredentials: true // Включаем передачу cookies
+    });
   }
 
   /**

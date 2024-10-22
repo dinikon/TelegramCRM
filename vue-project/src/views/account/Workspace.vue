@@ -16,11 +16,26 @@ function GetWorkspace() {
       });
 }
 
+function Refresh() {
+  ApiService.setHeader();
+  ApiService.post(`/api/v1/auth/refresh`, {})
+      .then(({ data }) => {
+        console.log('Данные:', data);
+      })
+      .catch((error) => {
+        if (error.response && error.response.data) {
+          console.log('Ошибка:', error.response.data.errors);
+        } else {
+          console.log("Неизвестная ошибка:", error);
+        }
+      });
+}
+
 
 </script>
 
 <template>
-  <button v-on:click="GetWorkspace">Click</button>
+  <button v-on:click="Refresh">Click</button>
   <div class="container-fixed" id="content_container"></div>
   <div class="container-fixed" id="content_container">
     <div class="grid">

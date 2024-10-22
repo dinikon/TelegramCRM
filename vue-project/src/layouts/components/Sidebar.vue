@@ -5,8 +5,7 @@ const {t} = useI18n();
 </script>
 
 <template>
-  <div
-      class="sidebar dark:bg-coal-600 bg-light border-r border-r-gray-200 dark:border-r-coal-100 fixed top-0 bottom-0 z-20 hidden lg:flex flex-col items-stretch shrink-0"
+  <div class="sidebar dark:bg-coal-600 bg-light border-r border-r-gray-200 dark:border-r-coal-100 fixed top-0 bottom-0 z-20 hidden lg:flex flex-col items-stretch shrink-0"
       data-drawer="true" data-drawer-class="drawer drawer-start top-0 bottom-0" data-drawer-enable="true|lg:false"
       id="sidebar">
     <div class="sidebar-header hidden lg:flex items-center relative justify-between px-3 lg:px-6 shrink-0"
@@ -25,6 +24,91 @@ const {t} = useI18n();
         <i class="ki-filled ki-black-left-line toggle-active:rotate-180 transition-all duration-300"></i>
       </button>
     </div>
+<!--    <div class="flex flex-col gap-2.5" id="sidebar_header">-->
+<!--      <div class="flex items-center gap-2.5 px-3.5 h-[70px]">-->
+<!--        <a href="html/demo10/index.html">-->
+<!--          <img class="size-[34px]" src="/media/app/mini-logo-circle-success.svg"/>-->
+<!--        </a>-->
+<!--        <div class="menu menu-default grow" data-menu="true">-->
+<!--          <div class="menu-item grow" data-menu-item-offset="0, 15px" data-menu-item-placement="bottom-start" data-menu-item-toggle="dropdown" data-menu-item-trigger="hover">-->
+<!--            <div class="menu-label cursor-pointer text-gray-900 font-medium grow justify-between">-->
+<!--          <span class="text-lg font-medium text-inverse grow">-->
+<!--           Metronic-->
+<!--          </span>-->
+<!--              <div class="flex flex-col text-gray-900 font-medium">-->
+<!--           <span class="menu-arrow">-->
+<!--            <i class="ki-filled ki-up">-->
+<!--            </i>-->
+<!--           </span>-->
+<!--                <span class="menu-arrow">-->
+<!--            <i class="ki-filled ki-down">-->
+<!--            </i>-->
+<!--           </span>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="menu-dropdown w-48 py-2">-->
+<!--              <div class="menu-item">-->
+<!--                <a class="menu-link" href="html/demo10/public-profile/profiles/default.html" tabindex="0">-->
+<!--            <span class="menu-icon">-->
+<!--             <i class="ki-filled ki-profile-circle">-->
+<!--             </i>-->
+<!--            </span>-->
+<!--                  <span class="menu-title">-->
+<!--             Public Profile-->
+<!--            </span>-->
+<!--                </a>-->
+<!--              </div>-->
+<!--              <div class="menu-item">-->
+<!--                <a class="menu-link" href="html/demo10.html" tabindex="0">-->
+<!--            <span class="menu-icon">-->
+<!--             <i class="ki-filled ki-setting-2">-->
+<!--             </i>-->
+<!--            </span>-->
+<!--                  <span class="menu-title">-->
+<!--             Account-->
+<!--            </span>-->
+<!--                </a>-->
+<!--              </div>-->
+<!--              <div class="menu-item">-->
+<!--                <a class="menu-link" href="html/demo10/network/get-started.html" tabindex="0">-->
+<!--            <span class="menu-icon">-->
+<!--             <i class="ki-filled ki-users">-->
+<!--             </i>-->
+<!--            </span>-->
+<!--                  <span class="menu-title">-->
+<!--             Network-->
+<!--            </span>-->
+<!--                </a>-->
+<!--              </div>-->
+<!--              <div class="menu-item">-->
+<!--                <a class="menu-link" href="html/demo10/authentication/get-started.html" tabindex="0">-->
+<!--            <span class="menu-icon">-->
+<!--             <i class="ki-filled ki-security-user">-->
+<!--             </i>-->
+<!--            </span>-->
+<!--                  <span class="menu-title">-->
+<!--             Authentication-->
+<!--            </span>-->
+<!--                </a>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--&lt;!&ndash;      <div class="flex items-center gap-2.5 px-3.5">&ndash;&gt;-->
+<!--&lt;!&ndash;        &lt;!&ndash; Input &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        <a class="btn btn-dark btn-sm justify-center min-w-[198px]" href="html/demo10/public-profile/projects/3-columns.html">&ndash;&gt;-->
+<!--&lt;!&ndash;          <i class="ki-filled ki-plus">&ndash;&gt;-->
+<!--&lt;!&ndash;          </i>&ndash;&gt;-->
+<!--&lt;!&ndash;          Add New&ndash;&gt;-->
+<!--&lt;!&ndash;        </a>&ndash;&gt;-->
+<!--&lt;!&ndash;        &lt;!&ndash; End of Input &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        <button class="btn btn-icon btn-dark btn-icon-lg size-8 hover:text-primary" data-modal-toggle="#search_modal">&ndash;&gt;-->
+<!--&lt;!&ndash;          <i class="ki-filled ki-magnifier">&ndash;&gt;-->
+<!--&lt;!&ndash;          </i>&ndash;&gt;-->
+<!--&lt;!&ndash;        </button>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+<!--    </div>-->
     <div class="sidebar-content flex grow shrink-0 py-5 pr-2" id="sidebar_content">
       <div class="scrollable-y-hover grow shrink-0 flex pl-2 lg:pl-5 pr-1 lg:pr-3" data-scrollable="true"
            data-scrollable-dependencies="#sidebar_header" data-scrollable-height="auto" data-scrollable-offset="0px"
