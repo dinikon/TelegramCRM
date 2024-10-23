@@ -13,9 +13,8 @@ authStore.verifyAuth();
 
 // Получаем store
 const { customer, me } = useCustomerStore();
-onMounted(async () => {
-  await me(); // Ждём, пока данные будут загружены
-});
+
+me();
 
 function handleLogout() {
   store.logout()
@@ -51,7 +50,7 @@ function handleLogout() {
             </img>
           </div>
           <span class="badge badge-xs badge-primary badge-outline">
-            Pro
+            {{ customer.status }}
            </span>
         </div>
         <div class="menu-separator">

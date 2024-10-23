@@ -1,5 +1,10 @@
 <script setup lang="ts">
 
+export interface Shop {
+  title: string | null;
+
+}
+
 </script>
 
 <template>
