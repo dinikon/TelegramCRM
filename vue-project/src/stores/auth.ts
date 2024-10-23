@@ -71,7 +71,7 @@ export const useAuthStore = defineStore("auth", () => {
   function verifyAuth() {
     if (JwtService.getToken()) {
       ApiService.setHeader();
-      ApiService.post("verify_token", { api_token: JwtService.getToken() })
+      ApiService.post("api/v1/auth/refresh", {})
         .then(({ data }) => {
           setAuth(data);
         })
