@@ -48,28 +48,14 @@ export const useAuthStore = defineStore("auth", () => {
     purgeAuth();
   }
 
-  function verifyAuth() {
-    if (JwtService.getToken()) {
-      ApiService.setHeader();
-      ApiService.post("api/v1/auth/refresh", {})
-        .then(({ data }) => {
-          setAuth(data);
-        })
-        .catch(({ response }) => {
-          setError(response.data.errors);
-          purgeAuth();
-        });
-    } else {
-      purgeAuth();
-    }
-  }
-
   return {
     errors,
     user,
     isAuthenticated,
     login,
     logout,
-    verifyAuth,
+    setAuth,
+    purgeAuth,
+    setError,
   };
 });

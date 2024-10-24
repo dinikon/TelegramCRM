@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {useAuthStore} from "@/stores/auth.ts";
+import { useAuthStore } from "@/stores/auth.ts";
 import ApiService from "@/core/services/ApiService.ts";
 import router from "@/router";
 import MenuItemLanguage from "@/components/MenuItemLanguage.vue";
@@ -7,9 +7,6 @@ import { useCustomerStore } from "@/stores/customer";
 import {onMounted} from "vue";
 
 const store = useAuthStore();
-
-const authStore = useAuthStore();
-authStore.verifyAuth();
 
 // Получаем store
 const { customer, me } = useCustomerStore();

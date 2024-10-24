@@ -32,15 +32,15 @@ const routes: Array<RouteRecordRaw> = [
           breadcrumbs: ['router.default.home', 'router.default.deals'],
         },
       },
-      // {
-      //   path: "/account/workspace",
-      //   name: "workspace",
-      //   component: () => import("@/views/account/Workspace.vue"),
-      //   meta: {
-      //     pageTitle: "Workspaces",
-      //     breadcrumbs: ['router.default.home', 'router.default.deals'],
-      //   },
-      // },
+      {
+        path: "/account/workspace",
+        name: "workspace",
+        component: () => import("@/views/account/Workspace.vue"),
+        meta: {
+          pageTitle: "Workspaces",
+          breadcrumbs: ['router.default.home', 'router.default.deals'],
+        },
+      },
       {
         path: "/crm/deals",
         name: "deals",
@@ -133,9 +133,6 @@ router.beforeEach((to, from, next) => {
 
   // current page view title
   document.title = `${to.meta.pageTitle} - ${import.meta.env.VITE_APP_NAME}`;
-
-  // verify auth token before each page change
-  authStore.verifyAuth();
 
   // before page access check if page requires authentication
   if (to.name === "sign-in" && authStore.isAuthenticated) {

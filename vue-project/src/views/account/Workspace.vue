@@ -3,7 +3,7 @@ import ApiService from "@/core/services/ApiService.ts";
 
 function GetWorkspace() {
   ApiService.setHeader();
-  ApiService.get(`/api/v1/workspace`)
+  ApiService.get(`/api/v1/shop`)
       .then(({ data }) => {
         console.log('Данные:', data);
       })

@@ -17,8 +17,8 @@ class ApiService {
   public static init(app: App<Element>) {
     ApiService.vueInstance = app;
     ApiService.vueInstance.use(VueAxios, axios);
-    // ApiService.vueInstance.axios.defaults.baseURL = "http://localhost:8000/";
-    ApiService.vueInstance.axios.defaults.baseURL = "https://api.inikon.com.ua/";
+    ApiService.vueInstance.axios.defaults.baseURL = "http://localhost:8000/";
+    // ApiService.vueInstance.axios.defaults.baseURL = "https://api.inikon.com.ua/";
 
     ApiService.setHeader();
 
