@@ -32,15 +32,15 @@ const routes: Array<RouteRecordRaw> = [
           breadcrumbs: ['router.default.home', 'router.default.deals'],
         },
       },
-      {
-        path: "/account/workspace",
-        name: "workspace",
-        component: () => import("@/views/account/Workspace.vue"),
-        meta: {
-          pageTitle: "Workspaces",
-          breadcrumbs: ['router.default.home', 'router.default.deals'],
-        },
-      },
+      // {
+      //   path: "/account/workspace",
+      //   name: "workspace",
+      //   component: () => import("@/views/account/Workspace.vue"),
+      //   meta: {
+      //     pageTitle: "Workspaces",
+      //     breadcrumbs: ['router.default.home', 'router.default.deals'],
+      //   },
+      // },
       {
         path: "/crm/deals",
         name: "deals",

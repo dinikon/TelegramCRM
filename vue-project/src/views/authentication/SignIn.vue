@@ -102,7 +102,7 @@ const login_data = {
 async function LoginDomoAccount() {
   try {
     await store.login(login_data);  // Ожидание завершения логина
-    router.push({ name: 'workspace' });
+    router.push({ name: 'dashboard' });
   } catch (error) {
     console.log("Error: ", error);
   }
