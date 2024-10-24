@@ -124,7 +124,7 @@ const router = createRouter({
 router.afterEach((to) => {
   // Сохраняем последний маршрут только для защищённых маршрутов
   if (to.meta.middleware === "auth") {
-    localStorage.setItem("lastRoute", to.fullPath); // Используем to.fullPath для точного пути
+    localStorage.setItem("lastRoute", to.path); // Сохраняем только чистый путь без хэша и query
   }
 });
 
@@ -146,11 +146,11 @@ router.beforeEach((to, from, next) => {
   // Проверка на защиту маршрута авторизацией
   if (to.meta.middleware === "auth") {
     if (authStore.isAuthenticated) {
-      // Проверяем, если это первый переход (from.name === null) и есть ли сохранённый маршрут
+      // Проверяем, это первый переход (from.name === null) и есть ли сохранённый маршрут
       const lastRoute = localStorage.getItem("lastRoute");
 
-      // Перенаправляем на сохранённый маршрут, если текущий путь - "/dashboard" и это первый переход
-      if (!from.name && lastRoute && to.fullPath === "/dashboard" && lastRoute !== "/dashboard") {
+      // Перенаправляем на сохранённый маршрут, если это первый переход и текущий путь - "/dashboard"
+      if (!from.name && lastRoute && to.path === "/dashboard" && lastRoute !== "/dashboard") {
         next(lastRoute); // Перенаправление на последний маршрут
         return;
       }
@@ -165,6 +165,7 @@ router.beforeEach((to, from, next) => {
     next();
   }
 });
+
 
 
 export default router;
