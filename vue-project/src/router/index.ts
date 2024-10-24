@@ -126,7 +126,7 @@ router.afterEach((to) => {
     return;
   }
   // Сохраняем полный путь для защищённых маршрутов
-  localStorage.setItem("lastRoute", to.fullPath);
+  localStorage.setItem("lastRoute", window.location.pathname);
 });
 
 router.beforeEach((to, from, next) => {
