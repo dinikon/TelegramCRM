@@ -4,7 +4,7 @@ import ApiService from "@/core/services/ApiService.ts";
 import router from "@/router";
 import MenuItemLanguage from "@/components/MenuItemLanguage.vue";
 import { useCustomerStore } from "@/stores/customer";
-import {onMounted} from "vue";
+
 
 const store = useAuthStore();
 
@@ -29,7 +29,7 @@ function handleLogout() {
     <div class="menu-item" data-menu-item-offset="20px, 10px" data-menu-item-placement="bottom-end"
          data-menu-item-toggle="dropdown" data-menu-item-trigger="click|lg:click">
       <div class="menu-toggle btn btn-icon rounded-full">
-        <img alt="" class="size-9 rounded-full border-2 border-success shrink-0" src="/media/avatars/300-2.png"></img>
+        <img alt="" class="size-9 rounded-full border-2 border-success shrink-0" src="/media/avatars/300-2.png" />
       </div>
       <div class="menu-dropdown menu-default light:border-gray-300 w-screen max-w-[250px]">
         <div class="flex items-center justify-between px-5 py-1.5 gap-1.5">
@@ -39,8 +39,7 @@ function handleLogout() {
               <span class="text-sm text-gray-800 font-semibold leading-none">
                 {{ customer.firstName }} {{ customer.lastName }}
               </span>
-              <a class="text-xs text-gray-600 hover:text-primary font-medium leading-none"
-                 href="html/demo1/account/home/get-started.html">
+              <a class="text-xs text-gray-600 hover:text-primary font-medium leading-none">
                 c.fisher@gmail.com
               </a>
             </div>
@@ -196,7 +195,7 @@ function handleLogout() {
 <!--             </span>-->
 <!--            </a>-->
 <!--          </div>-->
-          <menuItemLanguage/>
+          < menuItemLanguage />
         </div>
         <div class="menu-separator">
         </div>
@@ -211,14 +210,12 @@ function handleLogout() {
               Dark Mode
              </span>
               <label class="switch switch-sm">
-                <input data-theme-state="dark" data-theme-toggle="true" name="check" type="checkbox" value="1">
-                </input>
+                <input data-theme-state="dark" data-theme-toggle="true" name="check" type="checkbox" value="1" />
               </label>
             </div>
           </div>
           <div class="menu-item px-4 py-1.5">
-            <button v-on:click="handleLogout" class="btn btn-sm btn-light justify-center"
-                    href="html/demo1/authentication/classic/sign-in.html">
+            <button v-on:click="handleLogout" class="btn btn-sm btn-light justify-center">
               Log out
             </button>
           </div>
