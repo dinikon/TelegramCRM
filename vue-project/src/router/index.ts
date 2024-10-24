@@ -5,9 +5,6 @@ import {
 } from "vue-router";
 import { useAuthStore } from "@/stores/auth";
 
-import KTComponent from '../metronic/core/index';
-import KTLayout from '../metronic/app/layouts/demo1.js';
-
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",

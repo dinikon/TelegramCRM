@@ -43,7 +43,7 @@ const shopType = {
                 </div>
               </div>
               <div class="flex flex-col gap-1 lg:gap-2.5">
-                <a class="text-base font-smedium text-gray-900 hover:text-primary-active" href="html/demo1/account/billing/basic.html">
+                <a class="text-base font-medium text-gray-900 hover:text-primary-active">
                   Jira
                 </a>
                 <span class="text-2sm text-gray-700">
@@ -85,7 +85,7 @@ const shopType = {
               </p>
             </div>
             <div class="flex justify-center mb-5">
-              <a class="btn btn-primary" href="html/demo1/network/user-cards/mini-cards.html">
+              <a class="btn btn-primary">
                 Start Now
               </a>
             </div>
@@ -571,11 +571,11 @@ const shopType = {
   </div>
 </template>
 
-<style>
-.user-access-bg {
-  background-image: url('/media/images/2600x1200/bg-5.png');
-}
-.dark .user-access-bg {
-  background-image: url('/media/images/2600x1200/bg-5-dark.png');
-}
-</style>
+<!--<style>-->
+<!--.user-access-bg {-->
+<!--  background-image: url('/media/images/2600x1200/bg-5.png');-->
+<!--}-->
+<!--.dark .user-access-bg {-->
+<!--  background-image: url('/media/images/2600x1200/bg-5-dark.png');-->
+<!--}-->
+<!--</style>-->
