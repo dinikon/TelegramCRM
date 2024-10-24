@@ -122,7 +122,11 @@ const router = createRouter({
 
 // Сохранение последнего маршрута после каждого перехода
 router.afterEach((to) => {
-  localStorage.setItem("lastRoute", to.fullPath); // Сохраняем полный путь
+  if (!to.meta.middleware || to.meta.middleware !== "auth") {
+    return;
+  }
+  // Сохраняем полный путь для защищённых маршрутов
+  localStorage.setItem("lastRoute", to.fullPath);
 });
 
 router.beforeEach((to, from, next) => {
@@ -141,18 +145,19 @@ router.beforeEach((to, from, next) => {
 
   if (to.meta.middleware === "auth") {
     if (authStore.isAuthenticated) {
-      // Проверяем, есть ли сохранённый маршрут при повторном входе
+      // Проверяем, это первый переход (from.name === undefined) и есть ли сохранённый маршрут
       const lastRoute = localStorage.getItem("lastRoute");
-      if (lastRoute && to.name === "/") {
-        next(lastRoute); // Перенаправляем на последний сохранённый маршрут
-      } else {
-        next();
+      if (!from.name && lastRoute && to.fullPath !== lastRoute && to.fullPath === "/dashboard") {
+        // Перенаправляем на сохранённый маршрут, если это первый переход
+        next(lastRoute);
+        return;
       }
+      next(); // В остальных случаях - стандартное поведение
     } else {
-      next({ name: "sign-in" });
+      next({ name: "sign-in" }); // Перенаправляем на страницу входа, если не авторизован
     }
   } else {
-    next();
+    next(); // Стандартное поведение для незащищённых маршрутов
   }
 });
 
