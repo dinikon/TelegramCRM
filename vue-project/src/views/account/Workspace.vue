@@ -35,7 +35,7 @@ function Refresh() {
 </script>
 
 <template>
-  <button v-on:click="Refresh">Click</button>
+  <button v-on:click="GetWorkspace">Click</button>
   <div class="container-fixed" id="content_container"></div>
   <div class="container-fixed" id="content_container">
     <div class="grid">

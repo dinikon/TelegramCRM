@@ -3,14 +3,12 @@ import type { AxiosResponse } from "axios";
 import axios from "axios";
 import VueAxios from "vue-axios";
 import JwtService from "@/core/services/JwtService";
+import setupAuthInterceptor from "@/core/interceptors/AuthInterceptor";
 
 /**
  * @description service to call HTTP request via Axios
  */
 class ApiService {
-  /**
-   * @description property to share vue instance
-   */
   public static vueInstance: App;
 
   /**
@@ -19,8 +17,13 @@ class ApiService {
   public static init(app: App<Element>) {
     ApiService.vueInstance = app;
     ApiService.vueInstance.use(VueAxios, axios);
-    ApiService.vueInstance.axios.defaults.baseURL = "http://localhost:8000/";
-    // ApiService.vueInstance.axios.defaults.baseURL = "https://api.inikon.com.ua/";
+    // ApiService.vueInstance.axios.defaults.baseURL = "http://localhost:8000/";
+    ApiService.vueInstance.axios.defaults.baseURL = "https://api.inikon.com.ua/";
+
+    ApiService.setHeader();
+
+    // Добавление интерсепторов
+    setupAuthInterceptor();
   }
 
   /**

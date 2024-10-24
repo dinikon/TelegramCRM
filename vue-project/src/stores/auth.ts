@@ -48,26 +48,6 @@ export const useAuthStore = defineStore("auth", () => {
     purgeAuth();
   }
 
-  function register(credentials: User) {
-    return ApiService.post("register", credentials)
-      .then(({ data }) => {
-        setAuth(data);
-      })
-      .catch(({ response }) => {
-        setError(response.data.errors);
-      });
-  }
-
-  function forgotPassword(email: string) {
-    return ApiService.post("forgot_password", email)
-      .then(() => {
-        setError({});
-      })
-      .catch(({ response }) => {
-        setError(response.data.errors);
-      });
-  }
-
   function verifyAuth() {
     if (JwtService.getToken()) {
       ApiService.setHeader();
@@ -90,8 +70,6 @@ export const useAuthStore = defineStore("auth", () => {
     isAuthenticated,
     login,
     logout,
-    register,
-    forgotPassword,
     verifyAuth,
   };
 });
