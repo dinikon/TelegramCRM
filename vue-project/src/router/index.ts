@@ -122,42 +122,49 @@ const router = createRouter({
 
 // Сохранение последнего маршрута после каждого перехода
 router.afterEach((to) => {
-  if (!to.meta.middleware || to.meta.middleware !== "auth") {
-    return;
+  // Сохраняем последний маршрут только для защищённых маршрутов
+  if (to.meta.middleware === "auth") {
+    localStorage.setItem("lastRoute", to.fullPath); // Используем to.fullPath для точного пути
   }
-  // Сохраняем полный путь для защищённых маршрутов
-  localStorage.setItem("lastRoute", window.location.pathname);
 });
 
 router.beforeEach((to, from, next) => {
   const authStore = useAuthStore();
 
-  // current page view title
+  // Устанавливаем заголовок страницы
   document.title = `${to.meta.pageTitle} - ${import.meta.env.VITE_APP_NAME}`;
 
-  // verify auth token before each page change
+  // Проверяем токен авторизации перед каждым переходом
   authStore.verifyAuth();
 
-  // before page access check if page requires authentication
+  // Если пользователь уже авторизован и пытается зайти на страницу входа, перенаправляем на dashboard
   if (to.name === "sign-in" && authStore.isAuthenticated) {
-    next({name: "dashboard"});
+    next({ name: "dashboard" });
+    return;
   }
 
+  // Проверка на защиту маршрута авторизацией
   if (to.meta.middleware === "auth") {
     if (authStore.isAuthenticated) {
-      // Проверяем, это первый переход (from.name === undefined) и есть ли сохранённый маршрут
+      // Проверяем, если это первый переход (from.name === null) и есть ли сохранённый маршрут
       const lastRoute = localStorage.getItem("lastRoute");
-      if (!from.name && lastRoute && window.location.pathname !== lastRoute && window.location.pathname === "/dashboard") {
-        // Перенаправляем на сохранённый маршрут, если это первый переход
-        next(lastRoute);
+
+      // Перенаправляем на сохранённый маршрут, если текущий путь - "/dashboard" и это первый переход
+      if (!from.name && lastRoute && to.fullPath === "/dashboard" && lastRoute !== "/dashboard") {
+        next(lastRoute); // Перенаправление на последний маршрут
+        return;
       }
-      next(); // В остальных случаях - стандартное поведение
+
+      next(); // Продолжаем стандартное поведение, если нет нужды в перенаправлении
     } else {
-      next({ name: "sign-in" }); // Перенаправляем на страницу входа, если не авторизован
+      // Если пользователь не авторизован, перенаправляем на страницу входа
+      next({ name: "sign-in" });
     }
   } else {
-    next(); // Стандартное поведение для незащищённых маршрутов
+    // Стандартное поведение для маршрутов без middleware "auth"
+    next();
   }
 });
+
 
 export default router;
