@@ -1,8 +1,8 @@
 <script setup lang="ts">
 
-export interface Shop {
-  title: string | null;
-
+const shopType = {
+  1: "Prom",
+  2: "WooCommerce"
 }
 
 </script>
@@ -241,14 +241,6 @@ export interface Shop {
                   </p>
                   <div class="flex items-center flex-wrap lg:flex-nowrap gap-2.5">
                     <label class="form-label max-w-56">
-                      Назва
-                    </label>
-                    <div class="grow">
-                      <input class="input" placeholder="" type="text" value="CostaRicaHook">
-                    </div>
-                  </div>
-                  <div class="flex items-center flex-wrap lg:flex-nowrap gap-2.5">
-                    <label class="form-label max-w-56">
                       Назва джерела
                     </label>
                     <div class="grow">
@@ -262,16 +254,10 @@ export interface Shop {
                     <div class="grow">
                       <select class="select">
                         <option>
-                          All Events
+                          Select option
                         </option>
-                        <option>
-                          Push Webhooks
-                        </option>
-                        <option>
-                          Pipe Webhook
-                        </option>
-                        <option>
-                          Plugin Webhooks
+                        <option v-for="(value, key) in shopType" :key="key" :value="value">
+                          {{ value }}
                         </option>
                       </select>
                     </div>
@@ -467,31 +453,6 @@ export interface Shop {
           </div>
           <div class="xl:col-span-1">
             <div class="flex flex-col gap-5 xl:gap-7.5">
-              <div class="card">
-                <div class="card-header">
-                  <h3 class="card-title">
-                    Project API keys
-                  </h3>
-                </div>
-                <div class="card-body flex flex-col gap-2.5">
-                  <p class="text-2sm text-gray-700">
-                    Activate 'Do Not Disturb' to silence all notifications and focus
-                    without interruptions during specified hours or tasks.
-                  </p>
-                  <div>
-                    <a class="btn btn-link flex-none" href="#">
-                      Learn more
-                    </a>
-                  </div>
-                </div>
-                <div class="card-footer justify-center">
-                  <a class="btn btn-light btn-sm">
-                    <i class="ki-filled ki-note-2 text-gray-300">
-                    </i>
-                    Client Docs
-                  </a>
-                </div>
-              </div>
               <div class="card">
                 <div class="card-body py-10 flex flex-col gap-5 lg:gap-7.5">
                   <div class="flex flex-col items-start gap-2.5">

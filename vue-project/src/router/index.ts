@@ -123,6 +123,11 @@ const router = createRouter({
   },
 });
 
+// Сохранение последнего маршрута после каждого перехода
+router.afterEach((to) => {
+  localStorage.setItem("lastRoute", to.fullPath); // Сохраняем полный путь
+});
+
 router.beforeEach((to, from, next) => {
   const authStore = useAuthStore();
 
@@ -134,11 +139,18 @@ router.beforeEach((to, from, next) => {
 
   // before page access check if page requires authentication
   if (to.name === "sign-in" && authStore.isAuthenticated) {
-    next({name: "dashboard"})
+    next({name: "dashboard"});
   }
-  if (to.meta.middleware == "auth") {
+
+  if (to.meta.middleware === "auth") {
     if (authStore.isAuthenticated) {
-      next();
+      // Проверяем, есть ли сохранённый маршрут при повторном входе
+      const lastRoute = localStorage.getItem("lastRoute");
+      if (lastRoute && to.name === "/") {
+        next(lastRoute); // Перенаправляем на последний сохранённый маршрут
+      } else {
+        next();
+      }
     } else {
       next({ name: "sign-in" });
     }
