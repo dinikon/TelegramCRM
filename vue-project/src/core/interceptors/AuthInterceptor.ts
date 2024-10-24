@@ -1,24 +1,22 @@
 // src/core/interceptors/AuthInterceptor.ts
 import axios from "axios";
-import ApiService from "@/core/services/ApiService";
 import { useAuthStore } from "@/stores/auth";
 
-let isRefreshing = false;
-let failedQueue: any[] = [];
-
-const processQueue = (error: any, token: string | null = null) => {
-    failedQueue.forEach((prom) => {
-        if (token) {
-            prom.resolve(token);
-        } else {
-            prom.reject(error);
-        }
-    });
-    failedQueue = [];
-};
+// let isRefreshing = false;
+// let failedQueue: any[] = [];
+//
+// const processQueue = (error: any, token: string | null = null) => {
+//     failedQueue.forEach((prom) => {
+//         if (token) {
+//             prom.resolve(token);
+//         } else {
+//             prom.reject(error);
+//         }
+//     });
+//     failedQueue = [];
+// };
 
 const setupAuthInterceptor = () => {
-    const authStore = useAuthStore();
 
     // Интерсептор запросов
     axios.interceptors.request.use(

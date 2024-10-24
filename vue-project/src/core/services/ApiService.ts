@@ -73,10 +73,10 @@ class ApiService {
 
   /**
    * @description send the UPDATE HTTP request
-   * @param resource: string
-   * @param slug: string
-   * @param params: AxiosRequestConfig
    * @returns Promise<AxiosResponse>
+   * @param resource
+   * @param slug
+   * @param params
    */
   public static update(
     resource: string,
@@ -88,9 +88,9 @@ class ApiService {
 
   /**
    * @description Send the PUT HTTP request
-   * @param resource: string
-   * @param params: AxiosRequestConfig
    * @returns Promise<AxiosResponse>
+   * @param resource
+   * @param params
    */
   public static put(resource: string, params: any): Promise<AxiosResponse> {
     return ApiService.vueInstance.axios.put(`${resource}`, params);
@@ -98,8 +98,8 @@ class ApiService {
 
   /**
    * @description Send the DELETE HTTP request
-   * @param resource: string
    * @returns Promise<AxiosResponse>
+   * @param resource
    */
   public static delete(resource: string): Promise<AxiosResponse> {
     return ApiService.vueInstance.axios.delete(resource);
