@@ -131,40 +131,64 @@ router.afterEach((to) => {
 router.beforeEach((to, from, next) => {
   const authStore = useAuthStore();
 
-  // Устанавливаем заголовок страницы
+  // current page view title
   document.title = `${to.meta.pageTitle} - ${import.meta.env.VITE_APP_NAME}`;
 
-  // Проверяем токен авторизации перед каждым переходом
+  // verify auth token before each page change
   authStore.verifyAuth();
 
-  // Если пользователь уже авторизован и пытается зайти на страницу входа, перенаправляем на dashboard
+  // before page access check if page requires authentication
   if (to.name === "sign-in" && authStore.isAuthenticated) {
-    next({ name: "dashboard" });
-    return;
+    next({name: "dashboard"})
   }
-
-  // Проверка на защиту маршрута авторизацией
-  if (to.meta.middleware === "auth") {
+  if (to.meta.middleware == "auth") {
     if (authStore.isAuthenticated) {
-      // Проверяем, это первый переход (from.name === null) и есть ли сохранённый маршрут
-      const lastRoute = localStorage.getItem("lastRoute");
-
-      // Перенаправляем на сохранённый маршрут, если это первый переход и текущий путь - "/dashboard"
-      if (!from.name && lastRoute && to.path === "/dashboard" && lastRoute !== "/dashboard") {
-        next(lastRoute); // Перенаправление на последний маршрут
-        return;
-      }
-
-      next(); // Продолжаем стандартное поведение, если нет нужды в перенаправлении
+      next();
     } else {
-      // Если пользователь не авторизован, перенаправляем на страницу входа
       next({ name: "sign-in" });
     }
   } else {
-    // Стандартное поведение для маршрутов без middleware "auth"
     next();
   }
 });
+
+// router.beforeEach((to, from, next) => {
+//   const authStore = useAuthStore();
+//
+//   // Устанавливаем заголовок страницы
+//   document.title = `${to.meta.pageTitle} - ${import.meta.env.VITE_APP_NAME}`;
+//
+//   // Проверяем токен авторизации перед каждым переходом
+//   authStore.verifyAuth();
+//
+//   // Если пользователь уже авторизован и пытается зайти на страницу входа, перенаправляем на dashboard
+//   if (to.name === "sign-in" && authStore.isAuthenticated) {
+//     next({ name: "dashboard" });
+//     return;
+//   }
+//
+//   // Проверка на защиту маршрута авторизацией
+//   if (to.meta.middleware === "auth") {
+//     if (authStore.isAuthenticated) {
+//       // Проверяем, это первый переход (from.name === null) и есть ли сохранённый маршрут
+//       const lastRoute = localStorage.getItem("lastRoute");
+//
+//       // Перенаправляем на сохранённый маршрут, если это первый переход и текущий путь - "/dashboard"
+//       if (!from.name && lastRoute && to.path === "/dashboard" && lastRoute !== "/dashboard") {
+//         next(lastRoute); // Перенаправление на последний маршрут
+//         return;
+//       }
+//
+//       next(); // Продолжаем стандартное поведение, если нет нужды в перенаправлении
+//     } else {
+//       // Если пользователь не авторизован, перенаправляем на страницу входа
+//       next({ name: "sign-in" });
+//     }
+//   } else {
+//     // Стандартное поведение для маршрутов без middleware "auth"
+//     next();
+//   }
+// });
 
 
 
