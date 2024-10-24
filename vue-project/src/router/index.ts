@@ -147,10 +147,9 @@ router.beforeEach((to, from, next) => {
     if (authStore.isAuthenticated) {
       // Проверяем, это первый переход (from.name === undefined) и есть ли сохранённый маршрут
       const lastRoute = localStorage.getItem("lastRoute");
-      if (!from.name && lastRoute && to.fullPath !== lastRoute && to.fullPath === "/dashboard") {
+      if (!from.name && lastRoute && window.location.pathname !== lastRoute && window.location.pathname === "/dashboard") {
         // Перенаправляем на сохранённый маршрут, если это первый переход
         next(lastRoute);
-        return;
       }
       next(); // В остальных случаях - стандартное поведение
     } else {
