@@ -34,7 +34,7 @@ function handleLogout() {
       <div class="menu-dropdown menu-default light:border-gray-300 w-screen max-w-[250px]">
         <div class="flex items-center justify-between px-5 py-1.5 gap-1.5">
           <div class="flex items-center gap-2">
-            <img alt="" class="size-9 rounded-full border-2 border-success" src="/media/avatars/300-2.png">
+            <img alt="" class="size-9 rounded-full border-2 border-success" src="/media/avatars/300-2.png"/>
             <div class="flex flex-col gap-1.5">
               <span class="text-sm text-gray-800 font-semibold leading-none">
                 {{ customer.firstName }} {{ customer.lastName }}
@@ -43,7 +43,6 @@ function handleLogout() {
                 c.fisher@gmail.com
               </a>
             </div>
-            </img>
           </div>
           <span class="badge badge-xs badge-primary badge-outline">
             {{ customer.status }}
@@ -195,7 +194,7 @@ function handleLogout() {
 <!--             </span>-->
 <!--            </a>-->
 <!--          </div>-->
-          < menuItemLanguage />
+          <MenuItemLanguage/>
         </div>
         <div class="menu-separator">
         </div>
